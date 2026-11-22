@@ -30,7 +30,10 @@ jobs:
                   p=Path(name)
                   if p.is_absolute() or '..' in p.parts:
                       raise RuntimeError(f'Ruta insegura: {name}')
-              archive.extractall('.')
+              for info in archive.infolist():
+                  if info.filename.startswith('.github/workflows/'):
+                      continue  # Evitar permiso especial de modificación de workflows
+                  archive.extract(info, '.')
           PY
       - name: Verificar hashes de todos los archivos exportados
         run: python3 tools/verificar_contenido.py
