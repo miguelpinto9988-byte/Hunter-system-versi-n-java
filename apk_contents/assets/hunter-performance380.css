@@ -1,0 +1,13 @@
+/* V38.0 performance overrides - compatible with earlier windows and colors. */
+.modal-close-x,.modal-back25{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+/* Let the compositor own only transform/opacity animation while it is running. */
+.ambient-composited373{pointer-events:none!important;contain:layout paint style}
+.ambient-composited373 canvas{backface-visibility:hidden}
+/* Keep non-visible previews from paying full painting/layout cost on large lists. */
+.demo-gallery .demo-thumb,.routine-list .routine-card-14{content-visibility:auto;contain-intrinsic-size:auto 170px}
+/* Responsive: avoid oversized frame buffers and unscrollable panels on landscape phones. */
+@media(orientation:landscape) and (max-height:520px){
+ dialog#modal[open]{max-height:calc(100dvh - 12px);overscroll-behavior:contain}
+ .guided-demo{height:min(72dvh,310px)}
+}
+@media(prefers-reduced-motion:reduce){.ambient-composited373{display:none!important}}

@@ -1,0 +1,10 @@
+/* V38.35: in the profile-saved notice acknowledgement is explicit. */
+#modal.profile-confirm-wait3835 > .modal-close-x,
+#modal.profile-confirm-wait3835 > .modal-back24,
+#modal.profile-confirm-wait3835 > .legacy-modal-close,
+#modal.profile-confirm-wait3835 > .window-actions26 {
+  display: none !important;
+}
+#modal.profile-confirm-wait3835 .profile-confirm377 > button.btn.primary {
+  min-height: 46px;
+}

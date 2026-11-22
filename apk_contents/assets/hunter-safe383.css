@@ -1,0 +1,31 @@
+/* Hunter System V38.3: respetar la barra de estado y los recortes del sistema.
+ * El fondo ocupa toda la pantalla; solo el CONTENIDO interactivo se desplaza.
+ * Los valores en píxeles son calculados por hunter-safe383.js.
+ */
+:root {
+  --hunter-top-inset383: 0px;
+  --hunter-bottom-inset383: 0px;
+}
+html, body { background-color: var(--bg, #070c18); }
+/* App screen begins below the system status icons. Do not transform its children. */
+html.hunter-insets383 #app {
+  position: relative;
+  padding-top: var(--hunter-top-inset383);
+  box-sizing: border-box;
+}
+/* The fixed bottom nav also stays above a transparent gesture-navigation bar. */
+html.hunter-insets383 .nav {
+  padding-bottom: calc(10px + var(--hunter-bottom-inset383));
+}
+/* dialog and decorative frame positions are fitted by ModalViewport.fit(),
+   via --modal-top/left and --window-height26. No second CSS offset here. */
+@media (orientation: landscape) and (max-height: 500px) {
+  html.hunter-insets383 #app { padding-top: var(--hunter-top-inset383); }
+}
+/* Older landscape rules used 100dvh-12px without subtracting the status area.
+   Override them only for a visible dialog; allow scrolling inside it. */
+html.hunter-insets383 dialog#modal[open] {
+  max-height: var(--modal-max-height, calc(100dvh - 24px)) !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+}

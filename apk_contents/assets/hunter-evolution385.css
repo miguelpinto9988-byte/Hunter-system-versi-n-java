@@ -1,0 +1,45 @@
+/* Hunter System V38.5 — decorative improvement respecting existing frames and insets.
+   Does not add windows, panels, secondary player columns or overlay instructions. */
+:root {--hunter-evolution-accent385: #7496b3;--hunter-fx-opacity385: .50;--hunter-fx-duration385: 540ms;}
+html[data-hunter-rank385="E"] {--hunter-evolution-accent385: #84919e;}
+html[data-hunter-rank385="D"] {--hunter-evolution-accent385: #668ab0;}
+html[data-hunter-rank385="C"] {--hunter-evolution-accent385: #52a5bb;}
+html[data-hunter-rank385="B"] {--hunter-evolution-accent385: #9a8ce0;}
+html[data-hunter-rank385="A"] {--hunter-evolution-accent385: #d4b27b;}
+html[data-hunter-rank385="S"] {--hunter-evolution-accent385: #c9e4ff;}
+/* Changes affect rank-specific embellishments, never theme background/image. */
+.header-rank26 b,.rank-pill,.rank {border-color:var(--hunter-evolution-accent385, var(--accent)) !important;}
+.header-rank26 b {transition:border-color .5s ease,color .5s ease;}
+/* A nearly static rim shimmer around important already-present UI, no full-screen layer. */
+@keyframes hunterRim385 {0%{background-position:0% 50%}100%{background-position:100% 50%}}
+html[data-hunter-fx385="alto"] .frame-glint26 {
+  background:linear-gradient(90deg,transparent,var(--hunter-evolution-accent385),transparent);
+  background-size:180% 100%;animation:hunterRim385 7s ease-in-out infinite alternate;
+}
+@keyframes hunterTap385{0%{filter:brightness(1)}48%{filter:brightness(1.24)}100%{filter:brightness(1)}}
+@keyframes hunterAscend385{0%{outline:1px solid transparent;outline-offset:1px}
+  35%{outline:2px solid var(--hunter-evolution-accent385);outline-offset:3px}
+  100%{outline:1px solid transparent;outline-offset:1px}}
+@keyframes hunterMission385{0%{filter:brightness(1)}45%{filter:brightness(1.17)}100%{filter:brightness(1)}}
+.hunter-ui-burst385 {animation:hunterTap385 440ms ease-out 1 !important;}
+.hunter-rank-burst385 {animation:hunterAscend385 900ms ease-in-out 1 !important;}
+.hunter-mission-burst385 {animation:hunterMission385 480ms ease-out 1 !important;}
+/* Preserve original shapes, tactile feedback on existing actions only. */
+.btn,.nav button,.day {touch-action:manipulation;-webkit-tap-highlight-color:transparent;}
+.btn:active,.nav button:active,.day:active{filter:brightness(1.12);}
+/* The original safe-area manager has precedence; no new margins on the status bar. */
+.hunter-mode-field385 {margin-top:16px;margin-bottom:8px;}
+.hunter-mode-field385 select {max-width:100%;min-height:44px;}
+/* Reduce secondary effects before touching demonstrations or high-resolution images. */
+html[data-hunter-fx385="eco"] .ambient-composited373,
+html.hunter-hidden385 .ambient-composited373 {opacity:.15;animation-play-state:paused!important;}
+html[data-hunter-fx385="eco"] .boot-stars30 *,
+html.hunter-hidden385 .boot-stars30 * {animation-play-state:paused!important;}
+html[data-hunter-fx385="eco"] .frame-glint26 {animation:none!important;}
+html[data-hunter-fx385="medio"] .frame-glint26 {animation:none!important;}
+@media (prefers-reduced-motion:reduce){
+  .hunter-ui-burst385,.hunter-mission-burst385,.hunter-rank-burst385{animation:none!important;}
+  .header-rank26 b,.rank-pill,.rank{transition:none!important;}
+}
+@media (max-width:380px){.hunter-mode-field385{min-width:0}.hunter-mode-field385 select{width:100%;}}
+@media (orientation:landscape) and (max-height:450px){.hunter-mode-field385{margin-block:8px;}}

@@ -1,0 +1,12 @@
+# Archivos locales y generados
+.DS_Store
+__pycache__/
+*.pyc
+*.keystore
+*.jks
+*.p12
+*.pem
+*.key
+.idea/
+.gradle/
+build/

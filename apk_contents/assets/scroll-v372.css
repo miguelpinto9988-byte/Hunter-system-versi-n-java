@@ -1,0 +1,9 @@
+/* Keep the approved cards in the DOM, but skip offscreen layout and raster work. */
+@supports(content-visibility:auto){
+ #exerciseResults>.exercise-card{content-visibility:auto;overflow-clip-margin:24px;contain-intrinsic-block-size:auto 260px}
+ #routineResults>.routine-card,.routine-results-14>.routine-card18,.gym-routines23>.routine-card18{content-visibility:auto;overflow-clip-margin:24px;contain-intrinsic-block-size:auto 430px}
+}
+#exerciseResults,#routineResults,.routine-results-14,.gym-routines23{contain:layout style}
+/* Notifications inside a modal belong to its top layer, above its content. */
+dialog#modal>.modal-toast372{position:fixed!important;top:auto;bottom:max(18px,calc(100dvh - var(--modal-top) - var(--window-height26) + 14px));left:50%;transform:translateX(-50%);width:max-content;max-width:calc(var(--modal-width) - 32px);max-height:32dvh;overflow:auto;z-index:100!important;pointer-events:none;margin:0;background:var(--input);border-color:var(--accent);color:var(--text)}
+#routineNotice372{scroll-margin-block:80px 18px}

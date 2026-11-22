@@ -1,0 +1,71 @@
+/* V38.33: tablet landscape only. No layout or safe-area changes on phones. */
+@media (orientation:landscape) and (min-width:820px) and (min-height:520px) {
+  /* Place training controls in the middle of the tall demo's right column. */
+  #modal.hunter-tablet-guide3830.session-landscape35[open] .wide-session35 .session-body35 > .session-controls35 {
+    align-self:stretch;
+    min-height:var(--demo-height35);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:clamp(7px,1.1dvh,13px);
+    padding:clamp(6px,1.6dvh,18px) 0;
+    box-sizing:border-box;
+  }
+  #modal.hunter-tablet-guide3830[open] .hunter-guide-companion3833 {
+    display:grid;
+    grid-template-columns:clamp(78px,24%,130px) minmax(0,1fr);
+    gap:clamp(8px,1.1vw,16px);
+    align-items:center;
+    width:100%;
+    height:clamp(95px,17dvh,155px);
+    min-height:0;
+    flex:0 0 auto;
+    box-sizing:border-box;
+    padding:6px 12px 6px 3px;
+    border-radius:10px;
+    border:1px solid var(--line);
+    background:linear-gradient(120deg,var(--input),var(--panel));
+    overflow:hidden;
+  }
+  #modal .hunter-guide-actor3833 {height:100%;min-width:0;position:relative;}
+  #modal .hunter-guide-actor3833 > img {object-position:center bottom;max-width:100%;max-height:100%;}
+  #modal .hunter-guide-message3833{display:flex;flex-direction:column;gap:5px;min-width:0;justify-content:center;}
+  #modal .hunter-guide-message3833 small{font-size:clamp(9px,.85vw,12px);letter-spacing:.13em;color:var(--muted);line-height:1.1;}
+  #modal .hunter-guide-message3833 strong{font-size:clamp(16px,1.7vw,26px);line-height:1.05;color:var(--accent);}
+  #modal .hunter-guide-phrase3833{font-size:clamp(12px,1.13vw,17px);line-height:1.35;margin:2px 0 0;overflow-wrap:break-word;}
+  #modal.hunter-tablet-guide3830[open] .session-controls35 .session-stats31 {
+    width:100%;
+    margin:2px 0 4px;
+    gap:6px 13px;
+    align-items:center;
+  }
+  #modal.hunter-tablet-guide3830[open] .session-controls35 .guided-dose,
+  #modal.hunter-tablet-guide3830[open] .session-controls35 .guided-clock output {text-align:center;justify-self:center;}
+  #modal.hunter-tablet-guide3830[open] .session-controls35 .guided-clock output{font-variant-numeric:tabular-nums;}
+
+  /* In the separate Compañero window, visually balance the illustrated card
+     above the middle of the details column rather than pinning it to the top. */
+  #modal.hunter-tablet-all3831.coach-window33[open] .coach-layout33 > .shadow-column33 {
+    align-self:center;
+    position:sticky;
+    top:clamp(10px,2dvh,25px);
+    transform:translateY(-clamp(12px,2.6dvh,32px));
+  }
+}
+@media (orientation:landscape) and (min-width:820px) and (min-height:520px) and (max-height:720px) {
+  #modal.hunter-tablet-guide3830[open] .hunter-guide-companion3833 {height:clamp(74px,14dvh,110px);padding:3px 8px;}
+  #modal.hunter-tablet-guide3830[open] .hunter-guide-message3833{gap:3px;}
+  #modal.hunter-tablet-guide3830[open] .hunter-guide-phrase3833{font-size:12px;line-height:1.2;}
+  #modal.hunter-tablet-guide3830[open] .session-controls35 .btn{min-height:34px!important;font-size:13px!important;}
+  #modal.hunter-tablet-guide3830[open] .session-controls35{gap:5px!important;padding:3px 0!important;}
+}
+@media (prefers-reduced-motion:reduce) {
+  #modal .hunter-guide-companion3833 .shadow-actor33 > img,
+  #modal .hunter-guide-companion3833 .actor-aura33 {animation:none!important;}
+}
+html.still #modal .hunter-guide-companion3833 .shadow-actor33 > img,
+html[data-hunter-fx385="eco"] #modal .hunter-guide-companion3833 .shadow-actor33 > img,
+html.hunter-hidden385 #modal .hunter-guide-companion3833 .shadow-actor33 > img {animation:none!important;}
+html.still #modal .hunter-guide-companion3833 .actor-aura33,
+html[data-hunter-fx385="eco"] #modal .hunter-guide-companion3833 .actor-aura33,
+html.hunter-hidden385 #modal .hunter-guide-companion3833 .actor-aura33 {animation:none!important;}

@@ -1,0 +1,34 @@
+/* Hunter System V38.19 — paint only visible exercise cards in long lists.
+   Leaves existing artwork, frames and the SVG player unchanged. */
+@supports (content-visibility: auto) {
+  #exerciseResults.exercise-grid > .exercise-card {
+    content-visibility: auto;
+    /* Based on measured examples at 320, 393, 851 and 1024px. 
+       This is a fallback estimate, never a fixed height. Once the browser
+       lays the card out, its real height is used. */
+    contain-intrinsic-size: auto 112px; /* conserva el eje horizontal de V38.19 */
+    contain-intrinsic-block-size: auto 232px;
+  }
+}
+#exerciseResults > .hunter-more3819 {
+  grid-column: 1 / -1;
+  block-size: 1px;
+  min-block-size: 1px;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Narrow screens wrap long names/materials into more lines; reserve
+   a larger estimated height while the cards are offscreen. */
+@supports (content-visibility: auto) {
+  @media (max-width: 359px) {
+    #exerciseResults.exercise-grid > .exercise-card {
+      contain-intrinsic-block-size: auto 292px;
+    }
+  }
+  @media (min-width: 720px) {
+    #exerciseResults.exercise-grid > .exercise-card {
+      contain-intrinsic-block-size: auto 236px;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+/* Hunter System 38.70 · feedback that stays readable on mobile and desktop */
+.dp-form3870,.dp-panel3870{display:block;max-width:100%;overflow-wrap:anywhere}
+.dp-form3870 form{display:grid;gap:15px}
+.dp-form3870 form>label{display:grid;gap:7px;line-height:1.35;color:#d9e4f7}
+.dp-form3870 select,.dp-form3870 textarea{display:block;box-sizing:border-box;width:100%;min-width:0;max-width:100%;border:1px solid #7384a4;background:#101826;color:#e5edf8;border-radius:9px;padding:11px;font:inherit}
+.dp-form3870 h4,.dp-panel3870 h4{margin:12px 0 4px;color:#c6d5ed}
+.dp-exerciselist3870{display:grid;gap:10px}
+.dp-exercise3870{padding:12px;background:#111d2d;border:1px solid #435477;border-radius:12px;display:grid;gap:8px}
+.dp-exercise3870 strong,.dp-result3870 strong{display:block;color:#edf3ff}
+.dp-exercise3870 small,.dp-result3870 small,.dp-categories3870 small{display:block;color:#aabcda;font-size:.82em}
+.dp-categories3870{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,225px),1fr));gap:9px;margin:13px 0}
+.dp-categories3870>div,.dp-result3870{background:#121c2c;border:1px solid #3b506e;border-radius:10px;padding:12px;margin-top:8px}
+.dp-result3870 p,.dp-categories3870 p{margin:6px 0 0;line-height:1.45;font-size:.92em;color:#d2dded}
+.dp-panel3870 .btn{margin-top:7px}
+@media(max-width:430px){.dp-form3870{padding:12px}.dp-exercise3870{padding:10px}.dp-panel3870{padding:13px}.dp-categories3870{grid-template-columns:1fr}}
+
+/* 38.71: escala de esfuerzo claramente diferenciada de la decisión final */
+.dp-scale3871{border:1px solid #657a9b;border-radius:12px;background:#18263a;padding:12px;color:#dbe6f7}
+.dp-scale3871>strong{display:block;margin-bottom:8px;line-height:1.3}
+.dp-scale-grid3871{display:grid;grid-template-columns:repeat(auto-fit,minmax(72px,1fr));gap:6px;margin-bottom:10px}
+.dp-scale-grid3871 span{display:block;text-align:center;border:1px solid #4d617e;border-radius:7px;padding:6px;background:#111d2d;color:#e9efff;font-variant-numeric:tabular-nums}
+.dp-scale3871 small{display:block;line-height:1.5;color:#afbed4}
+.dp-effort3871{border-left:3px solid #acbfe9;padding:7px 9px;background:rgba(123,145,180,.11);font-size:.9em;color:#e6efff}
+@media(max-width:430px){.dp-scale-grid3871{grid-template-columns:repeat(4,minmax(0,1fr))}}

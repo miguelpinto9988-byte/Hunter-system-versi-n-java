@@ -1,0 +1,33 @@
+/* Hunter System 38.2: only scoped presentation changes; catalog remains intact. */
+/* Remove redundant goal-preview and nonessential explanatory boxes from Profile. */
+#profileForm .goal-control374,
+#profileForm .level-hint19,
+#profileForm .profile-save-help377,
+#profileForm #intentResult,
+#profileForm .profile-block>.footnote:not(.restriction-note){display:none!important}
+/* Keep restrictions, injury flags, forms, and actual warnings visible. */
+/* Exercise: duplicate view commentary and tutorials belong to stored metadata. */
+#modal .motion-card18 .view-note21,
+#modal .motion-card18 > details,
+#modal .motion-card18 > p:not(#vectorPhase):not(.timing-cycle375),
+#modal .compact-session31 .guided-step > p.notice:not(.warn),
+#modal .compact-session31 .guided-step > p.footnote {display:none!important}
+/* Embed the seconds label as an overlay; it must never be a grid/flex sibling. */
+#modal .guided-demo{position:relative;min-width:0;box-sizing:border-box;isolation:isolate;display:block;background:#102634}
+#modal .guided-demo .timing-cycle375{position:absolute!important;top:auto!important;left:10px!important;bottom:10px!important;right:auto!important;z-index:12;box-sizing:border-box;display:inline-flex!important;align-items:center;justify-content:center;max-width:calc(100% - 20px);width:max-content!important;height:auto!important;min-width:0!important;margin:0!important;padding:5px 9px!important;font:600 12px/1.25 system-ui,sans-serif!important;letter-spacing:0!important;color:#eaf4ff!important;background:rgba(8,19,34,.78)!important;border:1px solid rgba(167,202,255,.65)!important;border-radius:8px!important;box-shadow:none!important;pointer-events:none;white-space:normal}
+#modal .guided-demo .timing-cycle375 strong{font:inherit;color:#f5f7ff}
+#modal .motion-card18{position:relative;min-width:0}
+#modal .motion-card18>.timing-cycle375{position:relative!important;display:inline-block!important;margin:6px 0 10px!important;padding:6px 10px!important;background:rgba(10,24,40,.78)!important;border:1px solid var(--ornament26,var(--line))!important;border-radius:8px!important;font:600 13px/1.25 system-ui,sans-serif!important;color:var(--text)!important;width:max-content!important;max-width:100%;height:auto!important;box-sizing:border-box}
+/* Do not shrink/stretch 2D art to accommodate a timing label. */
+#modal .guided-demo .motion-svg18{width:100%!important;min-width:0;box-sizing:border-box;max-width:100%;margin:0 auto!important;align-items:center;justify-content:center;background:transparent!important}
+#modal .guided-demo .motion-svg18>svg:first-child{display:block;max-width:100%;object-fit:contain;object-position:50% 50%;margin:0 auto}
+#modal .guided-demo canvas{display:block;max-width:100%;height:auto;margin:0 auto;object-fit:contain}
+@media (orientation:landscape) and (min-width:600px){
+ #modal .wide-session35 .session-body35 .guided-demo{width:100%;height:var(--demo-height35);min-width:0;max-width:100%;overflow:hidden;background:#102634}
+ #modal .wide-session35 .session-body35 .guided-demo .motion-svg18{width:100%;height:100%;max-width:100%;overflow:hidden}
+ #modal .wide-session35 .session-body35 .guided-demo .motion-svg18>svg:first-child{width:100%;height:100%;max-height:100%;flex:1 1 auto;min-height:0;overflow:visible}
+ #modal .wide-session35 .session-body35 .guided-demo .timing-cycle375{bottom:8px!important;left:8px!important;max-width:min(240px,calc(100% - 16px));font-size:11px!important}
+}
+@media(max-width:599px){
+ #modal .guided-demo .timing-cycle375{bottom:7px!important;left:7px!important;font-size:11px!important;padding:4px 7px!important}
+}

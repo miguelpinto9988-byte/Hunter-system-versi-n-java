@@ -1,0 +1,10 @@
+/* V38.6: mejoras discretas sobre controles existentes; sin paneles nuevos. */
+:where(button, a[href], [role="button"]):focus-visible {
+  outline: 2px solid var(--cyan, #7de5ff);
+  outline-offset: 3px;
+}
+/* No crear transformaciones de layout ni filtros de desenfoque permanentes.
+   Las transiciones existentes del acompañante siguen en el motor 2D. */
+@media (prefers-reduced-motion: reduce) {
+  :where(button, a[href]):focus-visible { transition: none !important; }
+}

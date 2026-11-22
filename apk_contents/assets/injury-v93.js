@@ -1,0 +1,19 @@
+/* V9.3 — selección conservadora y variada cuando hay una lesión declarada y actividad autorizada. */
+(function(root){
+'use strict';
+const E=root.Engine,Adapt=root.Adapt,Schedule=root.Schedule,previousItems=Schedule.items;
+const avoid={neck:['Hombros','Espalda'],shoulder:['Hombros','Pecho','Espalda','Brazos'],elbow:['Pecho','Espalda','Brazos','Hombros'],wrist:['Pecho','Espalda','Brazos','Hombros'],back:['Espalda','Core','Cadera'],hip:['Cadera','Piernas'],knee:['Piernas','Cadera'],ankle:['Piernas','Cadera'],other:[]};
+const prefer={neck:['Piernas','Cadera','Core'],shoulder:['Piernas','Cadera','Core'],elbow:['Piernas','Cadera','Core'],wrist:['Piernas','Cadera','Core'],back:['Pecho','Brazos','Hombros','Piernas'],hip:['Pecho','Espalda','Hombros','Brazos','Core'],knee:['Pecho','Espalda','Hombros','Brazos','Core'],ankle:['Pecho','Espalda','Hombros','Brazos','Core'],other:[]};
+const zones=p=>[...new Set(Adapt.active(p).map(x=>x.zone))];
+function priorityGroups(p,pool){const activeZones=zones(p),groups=[...new Set(pool.map(e=>e.group))];return groups.map(group=>{let score=0;for(const z of activeZones){if((avoid[z]||[]).includes(group))score-=20;if((prefer[z]||[]).includes(group))score+=4;}if(p.focus==='upper'&&['Pecho','Espalda','Hombros','Brazos'].includes(group))score+=2;if(p.focus==='lower'&&['Piernas','Cadera'].includes(group))score+=2;if(p.focus==='core'&&group==='Core')score+=2;return {group,score};}).filter(x=>x.score>-20).sort((a,b)=>b.score-a.score||a.group.localeCompare(b.group)).map(x=>x.group);}
+function rotate(list,n){if(!list.length)return [];const start=((n%list.length)+list.length)%list.length;return [...list.slice(start),...list.slice(0,start)];}
+function items(p,kind,rotation,carry){const active=Adapt.active(p),mode=Adapt.mode(p);if(!active.length||!mode.auto)return previousItems(p,kind,rotation,carry);const category=kind==='strength'?'Fuerza':kind==='cardio'?'Cardio':'Movilidad',pool=E.exercises.filter(e=>e.variant==='base'&&e.category===category&&Adapt.allowed(e,p));if(!pool.length)return [];
+ const cap=p.minutes===10?2:p.minutes===20?3:5,count=kind==='recovery'?Math.min(3,pool.length):Math.min(cap,pool.length);let chosen=[];
+ if(kind==='strength'){const ranked=priorityGroups(p,pool),groups=rotate(ranked,rotation),safePool=ranked.length?pool.filter(e=>ranked.includes(e.group)):pool,used=new Set();for(const group of groups){const options=safePool.filter(e=>e.group===group&&!used.has(e.id));if(!options.length)continue;const pick=options[Math.abs(rotation+chosen.length)%options.length];chosen.push(pick);used.add(pick.id);if(chosen.length>=count)break;}if(chosen.length<count){for(const e of rotate(safePool,rotation)){if(used.has(e.id))continue;chosen.push(e);used.add(e.id);if(chosen.length>=count)break;}}}
+ else chosen=rotate(pool,rotation).slice(0,count);
+ return chosen.map(e=>({id:e.id,sets:1,target:e.unit==='sec'?(kind==='cardio'?20:15):kind==='recovery'?6:Math.min(8,carry||6),rest:kind==='recovery'?25:kind==='cardio'?45:Math.max(75,p.restSeconds||90)}));
+}
+function summary(p){const active=Adapt.active(p),mode=Adapt.mode(p);if(!active.length)return null;const names=zones(p).map(z=>Adapt.zones[z]||z);if(!mode.auto)return {auto:false,zones:names,groups:[],text:mode.reason};const pool=E.exercises.filter(e=>e.variant==='base'&&e.category==='Fuerza'&&Adapt.allowed(e,p)),groups=priorityGroups(p,pool).slice(0,5);return {auto:true,zones:names,groups,text:groups.length?`Zona declarada: ${names.join(', ')}. Se priorizan grupos compatibles distintos: ${groups.join(', ')}.`:`Zona declarada: ${names.join(', ')}. No hay suficientes grupos de fuerza compatibles; el sistema buscará movilidad, cardio o descanso.`};}
+Schedule.items=items;
+root.InjuryAwareV93={items,summary,priorityGroups,zones};
+})(typeof window!=='undefined'?window:globalThis);

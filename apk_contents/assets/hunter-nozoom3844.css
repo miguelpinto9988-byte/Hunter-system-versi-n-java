@@ -1,0 +1,6 @@
+/* Hunter System V38.44 — disallow page-wide pinch zoom while preserving
+   single-pointer vertical/horizontal scrolling and accessibility text sizing.
+   Do not set overflow:hidden or change the initial layout scale. */
+html, body {
+  touch-action: pan-x pan-y;
+}

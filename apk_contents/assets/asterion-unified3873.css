@@ -1,0 +1,6 @@
+/* 38.73 progressive enhancement; no changes to exercise SVG assets. */
+.ar-note3873,.ar-offer3873{margin:12px 0;padding:12px 14px;border:1px solid rgba(171,187,219,.28);border-radius:12px;background:rgba(23,37,56,.6);color:#cbd7e9;line-height:1.45}
+.ar-offer3873{border-color:rgba(172,148,229,.35);background:rgba(70,48,101,.16)}
+.ar-offer3873 small{display:block;font-size:.85em;color:#a9bad1;margin-top:5px}
+.ar-offer3873 p{margin:6px 0;font-size:.92em}
+@media(max-width:390px){.ar-note3873,.ar-offer3873{padding:10px;margin:8px 0}}

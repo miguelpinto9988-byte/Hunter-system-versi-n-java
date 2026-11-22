@@ -1,0 +1,32 @@
+/* Hunter EVOLUTION V38.24: decorative depth on existing surfaces only.
+   Excludes ambient shadows, backgrounds chooser, aura, rewards or new windows.
+   Reduced-motion, eco and hidden modes disable all new animations. */
+@media (prefers-reduced-motion: no-preference) {
+  html:not(.hunter-hidden385):not(.hunter-reduced385):not([data-hunter-fx385="eco"]) body::before {
+    transform-origin: 55% 18%;
+    animation: hunter-depth3824 34s ease-in-out infinite alternate;
+  }
+  html[data-frame33]:not(.hunter-hidden385):not(.hunter-reduced385):not([data-hunter-fx385="eco"]) .command-hero.monarch-hero33::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    z-index: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    background: linear-gradient(115deg, transparent 24%, rgba(155,221,255,.085) 47%, transparent 70%);
+    background-size: 190% 100%;
+    opacity: .48;
+    animation: hunter-glass3824 19s ease-in-out infinite alternate;
+  }
+}
+@keyframes hunter-depth3824 {
+  from { transform: translate3d(-3px,0,0) scale(1.015); }
+  to { transform: translate3d(3px,2px,0) scale(1.025); }
+}
+@keyframes hunter-glass3824 {
+  from { background-position: 0 0; opacity: .24; }
+  to { background-position: 100% 0; opacity: .4; }
+}
+@media (prefers-reduced-motion: reduce) {
+ html .command-hero.monarch-hero33::before { animation: none !important; }
+}

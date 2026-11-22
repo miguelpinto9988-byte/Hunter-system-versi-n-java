@@ -1,0 +1,2 @@
+/* Hunter System 38.67: prevent long inspector content from causing horizontal scrolling. */
+#modal .hunter-motion-focus3866{overflow-wrap:anywhere;max-width:100%;box-sizing:border-box}

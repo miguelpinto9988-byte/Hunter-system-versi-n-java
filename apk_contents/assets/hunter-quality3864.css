@@ -1,0 +1,25 @@
+/* Hunter System 38.64: conserve technical view alongside optional anatomical comparison. */
+#modal .motion-card18.hunter-anatomy-on3863 > .motion-svg18{display:block!important}
+#modal .motion-card18.hunter-anatomy-on3863 > .catalog-motion46{display:block!important}
+#modal .hunter-quality-badge3864{display:grid;gap:5px;margin:12px 0 10px;padding:11px 13px;border:1px solid #526780;border-left:3px solid #a2bad3;border-radius:10px;background:#182735;color:#cbd8e9;line-height:1.5;font-size:12px}
+#modal .hunter-quality-badge3864 strong{font-size:13px;color:#e4ebfb}
+#modal .hunter-controls3864{display:grid;grid-template-columns:minmax(0,1fr) minmax(90px,1fr) minmax(0,1fr);align-items:center;gap:8px;margin:10px 0 16px}
+#modal .hunter-controls3864 .btn{margin:0;min-height:42px;padding:8px 6px;line-height:1.35;font-size:13px;white-space:normal;min-width:0}
+#modal .hunter-frame3864{color:#aebfdf;font-size:12px;text-align:center;line-height:1.4;font-variant-numeric:tabular-nums}
+#modal .hunter-controls3864 .hunter-reset3864{grid-column:1/-1;max-width:260px;justify-self:center;padding:8px 18px}
+#modal .hunter-technical3864{font-weight:600;color:#afc7dc;font-size:12px;letter-spacing:.025em;margin:11px 0 4px}
+#modal .hunter-anatomy-on3863 .hunter-compare3863{border:1px solid #4b5d7a;border-radius:10px;background:#172438;padding:12px;margin-top:14px}
+#modal .hunter-compare3863 .hunter-anatomy3863{height:clamp(220px,40dvh,380px);border:1px solid #465b72;border-radius:8px}
+#modal .hunter-report3864{margin:12px 0 2px;padding:10px 12px;border:1px solid #40536b;border-radius:10px;background:#14202e}
+#modal .hunter-report3864 summary{cursor:pointer;font-size:13px;font-weight:600;color:#d6dff0;line-height:1.4}
+#modal .hunter-report-body3864{display:grid;gap:9px;padding:10px 0 2px}
+#modal .hunter-report-body3864 p{font-size:12px;line-height:1.45;margin:0}
+#modal .hunter-report-body3864 select,#modal .hunter-report-body3864 textarea{width:100%;min-width:0;box-sizing:border-box;padding:9px;border:1px solid #566783;border-radius:7px;background:#1a283a;color:#e5edf5;font-size:14px}
+#modal .hunter-report-buttons3864{display:flex;flex-wrap:wrap;gap:7px}
+#modal .hunter-report-buttons3864 .btn{min-height:39px;font-size:12px;padding:7px 11px;white-space:normal}
+#modal .hunter-report-status3864{min-height:15px;color:#c6dbf1}
+@media(min-width:860px){#modal .hunter-controls3864{grid-template-columns:1fr 1fr 1fr 1fr}#modal .hunter-controls3864 .hunter-reset3864{grid-column:auto;max-width:unset;width:100%}}
+@media(max-width:340px){#modal .hunter-controls3864{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}#modal .hunter-frame3864{grid-column:1/-1;grid-row:1}#modal .hunter-controls3864 .hunter-reset3864{grid-column:1/-1}}
+/* The legacy hunter-clean styles hide direct details children of motion-card18.
+   This report must remain accessible to users. */
+#modal .motion-card18 > details.hunter-report3864{display:block!important}

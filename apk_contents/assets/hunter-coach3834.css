@@ -1,0 +1,89 @@
+/* Hunter System V38.34 — only the Compañero modal, landscape tablets.
+   Keeps the existing Android safe insets, dialog dimensions and phone UI. */
+@media (orientation:landscape) and (min-width:820px) and (min-height:520px) {
+  #modal.hunter-tablet-all3831.coach-window33[open] .coach-layout33 {
+    display:grid;
+    grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);
+    column-gap:clamp(12px,2vw,28px);
+    row-gap:clamp(12px,1.5dvh,20px);
+    align-items:start;
+  }
+  /* The old align-self:center + sticky positioning moved the left card below
+     the viewport when the long right column defined the grid row height. */
+  #modal.hunter-tablet-all3831.coach-window33[open] .coach-layout33 > .shadow-column33 {
+    grid-column:1;
+    position:relative!important;
+    top:auto!important;
+    transform:none!important;
+    align-self:start!important;
+    margin:0!important;
+    min-height:0;
+    display:flex;
+    flex-direction:column;
+    gap:clamp(12px,1.6dvh,20px);
+  }
+  #modal.hunter-tablet-all3831.coach-window33[open] .coach-layout33 > .coach-content33 {
+    grid-column:2;
+    align-self:start;
+    min-height:0;
+    min-width:0;
+  }
+  /* The large animated character and phrase appear at the top-left. */
+  #modal.hunter-tablet-all3831.coach-window33[open] .shadow-column33 > .coach-intro.shadow-showcase33 {
+    display:grid;
+    width:100%;
+    height:clamp(310px,44dvh,490px);
+    min-height:310px;
+    margin:0;
+    padding:clamp(12px,1.4vw,22px);
+    grid-template-columns:minmax(0,1.18fr) minmax(0,.88fr);
+    grid-template-rows:auto 1fr;
+    align-items:center;
+    gap:clamp(8px,.85vw,15px);
+    box-sizing:border-box;
+  }
+  #modal.hunter-tablet-all3831.coach-window33[open] .shadow-showcase33 #animatedCompanion {
+    height:clamp(290px,40dvh,455px)!important;
+    min-height:0;
+    max-height:100%!important;
+    align-self:center;
+    margin:0!important;
+  }
+  #modal.hunter-tablet-all3831.coach-window33[open] .shadow-showcase33 #animatedCompanion > img {
+    width:108%;
+    left:-4%;
+    object-fit:contain;
+  }
+  #modal.hunter-tablet-all3831.coach-window33[open] .shadow-name33,
+  #modal.hunter-tablet-all3831.coach-window33[open] .shadow-phrase33 {
+    min-width:0;
+    overflow-wrap:anywhere;
+  }
+  #modal.hunter-tablet-all3831.coach-window33[open] .shadow-name33 #companionName {
+    font-size:clamp(25px,2.7vw,41px);
+  }
+  #modal.hunter-tablet-all3831.coach-window33[open] .shadow-phrase33 {
+    font-size:clamp(14px,1.28vw,20px);
+    line-height:1.28;
+  }
+  /* Existing Guía personal card moves beneath the character. */
+  #modal.hunter-tablet-all3831.coach-window33[open] .shadow-column33 > .learning-card {
+    box-sizing:border-box;
+    width:100%;
+    margin:0;
+    min-width:0;
+  }
+}
+/* Compact landscape tablets also keep the actor wholly visible near the top. */
+@media (orientation:landscape) and (min-width:820px) and (min-height:520px) and (max-height:720px) {
+  #modal.hunter-tablet-all3831.coach-window33[open] .shadow-column33 > .coach-intro.shadow-showcase33 {
+    height:clamp(245px,43dvh,320px);
+    min-height:245px;
+    padding:10px;
+  }
+  #modal.hunter-tablet-all3831.coach-window33[open] .shadow-showcase33 #animatedCompanion {
+    height:clamp(230px,39dvh,305px)!important;
+  }
+  #modal.hunter-tablet-all3831.coach-window33[open] .shadow-showcase33 .shadow-name33 .eyebrow {font-size:10px;letter-spacing:.8px;}
+  #modal.hunter-tablet-all3831.coach-window33[open] .shadow-showcase33 .shadow-phrase33 {font-size:clamp(12px,1.15vw,16px);padding:9px 6px;margin:6px -3px 0 -8px;}
+}

@@ -1,0 +1,20 @@
+/* 38.66: non-destructive original-SVG motion inspection for flagged demos. */
+#modal .hunter-motion-focus3866{min-width:0;background:linear-gradient(135deg,#132632,#1c2e40);border:1px solid #547089;border-radius:10px;padding:12px;margin:12px 0;display:grid;gap:10px;color:#d9e6f3}
+#modal .hunter-motion-focus-info3866 strong{display:block;font-size:14px;color:#dbe6f5;line-height:1.45}
+#modal .hunter-motion-focus-detail3866{font-size:12px;line-height:1.5;color:#bed1e4;margin:6px 0 0}
+#modal .hunter-motion-focus-actions3866{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;min-width:0}
+#modal .hunter-motion-focus-actions3866 .btn{box-sizing:border-box;min-width:0;white-space:normal;font-size:12px;min-height:44px;padding:8px 10px;line-height:1.35;border-radius:8px}
+#modal .hunter-motion-focus-actions3866 .btn:disabled{opacity:.44;cursor:not-allowed}
+#modal .hunter-motion-focus3866 svg{width:100%;height:65px;display:block;overflow:visible;background:#0f1d2c;border:1px solid #294c60;border-radius:6px}
+#modal .hunter-motion-chart-base3866{fill:none;stroke:#52718b;stroke-width:1.5}
+#modal .hunter-motion-chart-line3866{fill:none;stroke:#a8c4e6;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+#modal .hunter-motion-static3866{padding:8px 10px;border-left:3px solid #d5ad70;color:#e7d4b7;background:#242a30;font-size:12px;line-height:1.5;margin:0}
+@media(max-width:380px){#modal .hunter-motion-focus-actions3866{grid-template-columns:1fr}}
+/* Original demo SVGs contain tall viewports. Keep inspection buttons above
+   the illustration's pointer layer so that restoration is always possible. */
+#modal .hunter-motion-focus3866{position:relative;z-index:5;isolation:isolate}
+#modal .hunter-motion-focus-actions3866{position:relative;z-index:1}
+
+/* 38.67: keyboard-visible focus rings and reduced-motion support. */
+#modal .hunter-motion-focus-actions3866 button:focus-visible{outline:2px solid #d2c1ff;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){#modal .hunter-motion-focus3866 *{transition:none!important}}

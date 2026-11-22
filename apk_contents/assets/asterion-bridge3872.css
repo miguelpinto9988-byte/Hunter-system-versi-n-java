@@ -1,0 +1,15 @@
+/* Optional Asterion 38.72 UI; no replacement of original Hunter styles */
+.ar-settings3872,.ar-summary3872{margin-block:16px;display:block}
+.ar-settings3872 label,.ar-settings3872 fieldset{display:block;margin-block:10px}
+.ar-settings3872 select,.ar-settings3872 textarea{display:block;width:100%;max-width:100%;box-sizing:border-box;margin-top:5px}
+.ar-schedule3872,.ar-fields3872{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.ar-equipment3872{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.ar-equipment3872 label,.ar-line3872{display:flex!important;gap:8px;align-items:center;font-size:14px}
+.ar-equipment3872 input,.ar-line3872 input{flex:0 0 auto;accent-color:#a6a3ef}
+.ar-notice3872{font-size:13px;color:var(--muted,#b4c5d9);line-height:1.55;overflow-wrap:anywhere}
+.ar-review3872 details{border-bottom:1px solid rgba(180,202,235,.2);padding:10px 0}
+.ar-review3872 summary{cursor:pointer}
+.ar-entry3872{padding:10px 0;border-bottom:1px solid rgba(180,202,235,.2);display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.ar-entry3872 small{display:block;color:var(--muted,#a0adc0);font-size:12px}
+.ar-entry3872 .btn{font-size:12px;padding:8px 10px}
+@media(max-width:450px){.ar-schedule3872,.ar-fields3872,.ar-equipment3872{grid-template-columns:minmax(0,1fr)}.ar-entry3872{display:block}.ar-entry3872>div{margin-top:8px}}

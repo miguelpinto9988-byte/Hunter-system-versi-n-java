@@ -1,0 +1,8 @@
+/* V38.48: retain the approved list containment and original card dimensions.
+   Exercise SVGs, trajectories, detail panels and images stay untouched. */
+/* Pause decorative movement while offscreen or after the runtime's existing
+   inactivity threshold. The image remains visible; input resumes the effects. */
+.hunter-offscreen48,.hunter-offscreen48::before,.hunter-offscreen48::after,
+.hunter-offscreen48 *,.hunter-offscreen48 *::before,.hunter-offscreen48 *::after,
+html.effects-idle373 body::before,
+html.effects-idle373 .command-hero.monarch-hero33::before {animation-play-state:paused!important;}

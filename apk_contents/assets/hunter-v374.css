@@ -1,0 +1,34 @@
+/* Revisión móvil 37.4: zonas táctiles, ventanas completas y confirmación accesible. */
+.goal-control374{display:grid;gap:12px;margin:14px 0 22px;min-width:0}
+.goal-preview374{display:grid;gap:9px;overflow-wrap:anywhere;border:1px solid color-mix(in srgb,var(--accent,#68ddeb) 48%,var(--line));padding:16px;border-radius:12px;background:color-mix(in srgb,var(--panel) 87%,var(--accent,#68ddeb) 13%);box-shadow:inset 0 1px 0 #ffffff0d}
+.goal-preview374 b{font-size:14px;line-height:1.45}
+.goal-preview374 p{font-size:12px;color:var(--text)}
+.goal-preview374 small{font-size:11px;line-height:1.45}
+.goal-control374 .goal-apply374{white-space:normal;min-height:54px;padding:13px 17px;line-height:1.4;overflow-wrap:anywhere}
+.intent-warning374{border-left:3px solid #e9aa75;padding-left:12px}
+.goal-confirm374{text-align:center;display:grid;gap:14px;padding:10px 4px 20px}
+.goal-confirm374 h2{margin:0;color:var(--text);font-size:clamp(24px,5vw,34px)}
+.goal-confirm374>p{line-height:1.6}
+.goal-confirm374>.save-icon374{width:64px;height:64px;line-height:64px;margin:auto;border-radius:50%;font-size:28px;font-weight:800;color:#081c1c;background:#8ce7d0;box-shadow:0 0 38px #8ce7d077}
+.save-summary374{padding:18px;border-radius:13px;display:grid;gap:11px;text-align:left;border:1px solid var(--line);background:color-mix(in srgb,var(--panel) 84%,var(--accent,#68ddeb) 16%)}
+.save-summary374 b{color:var(--text);font-size:16px}.save-summary374 p{font-size:13px;line-height:1.65}.save-summary374 small{line-height:1.5}
+html,body,#app,.app{max-width:100%;overflow-x:clip}
+.app,.profile-block,dialog#modal,.card{min-width:0}
+.card :is(input,select,textarea){max-width:100%;min-width:0}
+#modal[open]{height:auto!important;min-height:0!important;max-height:min(var(--modal-max-height,calc(100dvh - 24px)),calc(100dvh - 20px))!important;overflow-y:auto!important;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch}
+#modal[open] :is(img,svg,canvas,video){max-width:100%}
+#modal[open] .modal-close-x,#modal[open] .modal-back24{min-width:44px;min-height:44px;touch-action:manipulation}
+#modal[open] .goal-confirm374 .btn{min-height:52px}
+.nav{padding-bottom:max(10px,env(safe-area-inset-bottom));}
+.nav button{min-height:49px;touch-action:manipulation}
+:where(.btn,.nav button,select,input,textarea,summary):focus-visible{outline:2px solid var(--accent,var(--cyan));outline-offset:3px}
+:where(.field,.fields,.profile-block){overflow-wrap:break-word}
+@media (max-width:520px){
+ .app{padding-inline:max(12px,env(safe-area-inset-left)) max(12px,env(safe-area-inset-right))}
+ .fields{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .goal-preview374{padding:13px}
+ .goal-confirm374{padding:6px 0 18px}
+ #modal[open]{width:min(calc(100vw - 16px),var(--modal-width,100vw))!important;max-width:calc(100vw - 16px)!important}
+}
+@media (max-width:355px){.fields{grid-template-columns:1fr}.nav button{font-size:9px;min-width:0}}
+@media (prefers-reduced-motion:reduce){.goal-confirm374 *{animation:none!important;transition:none!important}}

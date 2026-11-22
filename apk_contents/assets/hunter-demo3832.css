@@ -1,0 +1,47 @@
+/* Hunter System V38.32 – guided player: primary motion always dominates the
+   complementary SVG. Preserve the modal's Android safe areas and the
+   established layout on phones. Only the illustrated split is adjusted. */
+#modal[open] .timing-cycle375,
+#modal[open] #guidedTiming375,
+#modal[open] #vectorTiming375 {
+  display: none !important;
+}
+/* Main viewport larger than the optional secondary view for every exercise.
+   A flex+max-height combination in older tablet CSS allowed the secondary SVG
+   to consume most of the available height. Explicit grid tracks prevent it. */
+#modal.hunter-tablet-guide3830[open] .guided-session .guided-demo .motion-svg18[data-has-detail31="true"] {
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) !important;
+  grid-template-rows:minmax(0,3fr) minmax(0,1fr) !important;
+  align-content:stretch !important;
+  align-items:stretch !important;
+  gap:6px !important;
+  width:100% !important;
+  height:100% !important;
+  min-height:0 !important;
+  overflow:hidden !important;
+}
+#modal.hunter-tablet-guide3830[open] .guided-session .guided-demo .motion-svg18[data-has-detail31="true"] > svg:first-child:not(.detail-svg31) {
+  display:block !important;
+  grid-row:1;
+  width:100% !important;
+  height:100% !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  max-height:100% !important;
+  flex:none !important;
+  object-fit:contain !important;
+  overflow:hidden !important;
+}
+#modal.hunter-tablet-guide3830[open] .guided-session .guided-demo .motion-svg18[data-has-detail31="true"] > svg.detail-svg31 {
+  display:block !important;
+  grid-row:2;
+  width:100% !important;
+  height:100% !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  max-height:100% !important;
+  flex:none !important;
+  object-fit:contain !important;
+  overflow:hidden !important;
+}

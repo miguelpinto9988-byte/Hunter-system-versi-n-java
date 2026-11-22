@@ -1,0 +1,10 @@
+/* V38.17: save secondary GPU compositing in ECO mode only.
+   No UI columns, overlays, image rescaling or changes to vector exercise animations. */
+html[data-hunter-fx385="eco"] .nav,
+html.hunter-hidden385 .nav {
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+}
+@media (prefers-reduced-transparency: reduce) {
+  .nav { -webkit-backdrop-filter:none!important; backdrop-filter:none!important; }
+}

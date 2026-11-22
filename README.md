@@ -1,32 +1,51 @@
-# Hunter System — versión 38.79
+# Hunter System — versión 38.79 (contenido recuperado de APK)
 
-Proyecto de recuperación de la APK `HunterSystem_38.79_Mision_Dinamica_Actualizada.apk`.
+Este repositorio de trabajo contiene **los archivos recuperables de la APK** `HunterSystem_38.79_Mision_Dinamica_Actualizada.apk`.
 
-**Importante: la importación íntegra de código y recursos aún no está publicada en este repositorio.** No confundir esta documentación con la aplicación completa.
+## Estado de los archivos
 
-## Contenido comprobado de la APK
+- APK analizada: **4,258 archivos**.
+- Archivos extraídos en `apk_contents/`: **4,255**.
+- Archivos de fuentes tipográficas que se mantienen únicamente en la APK original: **3**. Los nombres y hashes se encuentran en `inventario_apk_sha256.csv`.
+- SHA-256 del APK original: `b722d7112e3e73ff74c608579efb8129fe3c7e26e60ba3ce68e44ddb513fc40e`.
 
-- 4.258 archivos internos.
-- 191 scripts JavaScript, 50 estilos CSS y una página HTML principal.
-- 342 vídeos MP4 de ejercicios, 2.400 archivos SVG, 1.210 archivos JSON, 51 imágenes WebP, además de PNG, audio y recursos Android.
-- La lógica web se conserva en `assets/`; la parte Android se distribuye como `classes.dex`, no como archivos `.java` originales.
-- SHA-256 APK 38.79: `b722d7112e3e73ff74c608579efb8129fe3c7e26e60ba3ce68e44ddb513fc40e`.
+## Estructura
 
-## Incorporación del contenido completo
+- `apk_contents/assets/`: HTML, JavaScript, CSS, datos, ilustraciones SVG, vídeos MP4, recursos WebP y audio; incluye la interfaz, animaciones y motor de rutinas accesibles.
+- `apk_contents/classes.dex`: bytecode Android compilado. **No es el código Java fuente original**.
+- `apk_contents/AndroidManifest.xml` y `apk_contents/resources.arsc`: metadatos y recursos Android en formato compilado.
+- `apk_contents/res/`: recursos nativos.
+- `inventario_apk_sha256.csv`: inventario de cada uno de los archivos internos del APK, con tamaño y checksum SHA-256, incluidos los que no se distribuyen separadamente.
+- `tools/verificar_contenido.py`: verifica integridad de los archivos presentes contra ese inventario.
 
-La extracción verificada está organizada con la estructura:
+## Importante: código fuente vs. APK
 
-```text
-apk_contents/
-├── assets/             # Interfaz, rutinas, animaciones, datos y recursos
-├── res/                # Recursos Android
-├── AndroidManifest.xml # Formato binario compilado
-├── resources.arsc
-└── classes.dex         # Bytecode Android
+La APK **no incluye necesariamente** fuentes Java originales, proyecto Android Studio, archivo `build.gradle`, `settings.gradle`, certificados de firma ni historia Git. `classes.dex` permite inspección y eventual ingeniería inversa, pero el fuente exacto no se puede recuperar idéntico. Los ficheros web de `assets/` sí son la versión de código que la APK ejecuta.
+
+**Esta copia por sí sola no es un proyecto Android Studio listo para recompilar.** No cambiar ni inventar lógica Java del APK a partir de aproximaciones sin cotejo con su ejecución.
+
+## Verificación
+
+Desde la raíz, usar:
+
+```bash
+python3 tools/verificar_contenido.py
 ```
 
-Para añadirla, copiar la carpeta `apk_contents/` y el inventario `inventario_apk_sha256.csv` del paquete extraído a este repositorio; luego realizar commit y push.
+Para regenerar la carpeta completa a partir de la APK original —incluyendo sus fuentes embebidas—:
 
-Este es un respaldo recuperado de APK, **no un proyecto Java/Android Studio completo y recompilable a partir de fuentes originales**. El proyecto nativo original (Gradle, archivos Java, claves de firma) debe recuperarse de su repositorio original o equipo de desarrollo para garantizar reconstrucciones idénticas.
+```bash
+python3 tools/extraer_apk.py ruta/a/HunterSystem_38.79_Mision_Dinamica_Actualizada.apk --destino apk_contents_completo
+```
 
-No publiques certificados, claves de firma ni credenciales.
+## Publicación en GitHub
+
+Para cargar todos los archivos de esta copia **sin omitir animaciones**, descomprimir este paquete en el clon del repositorio y ejecutar:
+
+```bash
+git add -A
+git commit -m "Importar Hunter System 38.79 desde APK, con animaciones y recursos"
+git push origin main
+```
+
+No almacenar claves privadas, contraseñas ni certificados de firma en un repositorio público.

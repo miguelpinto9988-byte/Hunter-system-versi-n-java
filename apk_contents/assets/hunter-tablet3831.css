@@ -1,0 +1,35 @@
+/* Hunter System V38.31 – all modal windows adapt to tablet viewports.
+   ModalViewport subtracts the existing Android safe-insets, then reserves
+   a small perimeter gap. Never apply to phones or the application background.
+   This file intentionally follows hunter-tablet3830.css in the cascade. */
+html dialog#modal.hunter-tablet-all3831[open] {
+  position:fixed !important;
+  box-sizing:border-box;
+  inset:auto !important;
+  top:var(--modal-top) !important;
+  left:var(--modal-left) !important;
+  width:var(--modal-width) !important;
+  max-width:var(--modal-width) !important;
+  height:var(--modal-max-height) !important;
+  max-height:var(--modal-max-height) !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  margin:0 !important;
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+  overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch;
+}
+/* Internal content keeps its own character, but never forces the larger modal
+   to overflow sideways. Scrolling remains on #modal, not the app behind it. */
+#modal.hunter-tablet-all3831 :is(.card,.field,.form-grid,.routine-grid,.exercise-grid,.coach-panel,.coach-intro,.guided-session,.guided-step,.tech-hero) {
+  max-width:100%;
+  min-width:0;
+  box-sizing:border-box;
+}
+/* Do not let ordinary paragraphs stretch across 1200 CSS pixels: retain
+   readable text while inputs, cards and demonstrations use available width. */
+#modal.hunter-tablet-all3831 > :is(p,.footnote,.notice) {
+  max-width:92ch;
+}
+/* The original tablet guided-player visuals from V38.30 are retained. */

@@ -1,0 +1,9 @@
+/* V38.4: pause purely decorative animation when the runtime is quiet/hidden.
+   Does not change high-resolution imagery or exercise animation timing. */
+html.runtime-hidden373 .ambient-composited373,
+html.effects-idle373 .ambient-composited373 { animation-play-state: paused !important; }
+html.runtime-hidden373 .boot-stars30 *,
+html.effects-idle373 .boot-stars30 * { animation-play-state: paused !important; }
+@media (prefers-reduced-motion: reduce) {
+ .ambient-composited373, .boot-orbit30, .boot-stars30 { animation: none !important; }
+}

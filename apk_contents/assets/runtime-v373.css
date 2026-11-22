@@ -1,0 +1,10 @@
+/* Las ilustraciones y sus posturas se conservan. */
+.ambient-composited373{overflow:hidden!important;contain:strict;isolation:isolate}
+dialog#modal>.ambient-composited373{position:fixed!important;z-index:0!important}
+.ambient-composited373>canvas{position:absolute!important;left:-24px!important;top:-24px!important;max-width:none!important;max-height:none!important;pointer-events:none!important}
+html.runtime-hidden373 *,html.runtime-hidden373 *:before,html.runtime-hidden373 *:after,
+html.surface-open373 #app *,html.surface-open373 #app *:before,html.surface-open373 #app *:after,
+.runtime-paused373 *{animation-play-state:paused!important}
+html.effects-idle373 :is(.actor-aura33,.shadow-actor33>img,.shadow-aura31 i),
+html.effects-idle373 .shadow-aura31:before{animation-play-state:paused!important;will-change:auto!important}
+.runtime-paused373>img{will-change:auto!important}

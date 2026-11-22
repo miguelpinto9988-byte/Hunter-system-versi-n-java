@@ -1,0 +1,7 @@
+/* Los nuevos textos viven DENTRO de ventanas existentes y respetan sus marcos. */
+.hunter-challenge3826 { display:block; margin:10px 0 0; color:var(--cyan,#b9dff5); font-size:.79rem; line-height:1.4; }
+.hunter-preswap3826 { border-top:1px solid rgba(185,223,245,.17); padding-top:12px; margin-top:14px; display:grid; gap:10px; }
+.hunter-swaprow3826 { display:grid; gap:6px; min-width:0; font-size:.82rem; }
+.hunter-swaprow3826 span { opacity:.8; }
+.hunter-swaprow3826 select { max-width:100%; min-width:0; font:inherit; }
+@media (prefers-reduced-motion:reduce) {.hunter-preswap3826 *, .hunter-challenge3826 { animation:none!important; transition:none!important; }}

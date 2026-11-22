@@ -1,0 +1,30 @@
+/* Weekly central-body integration 38.47. */
+/* Hunter System V38.45 — lightweight chips; no particle render loops. */
+.library-generator3845{margin-bottom:clamp(14px,3vw,23px);background:linear-gradient(135deg,rgba(28,41,68,.96),rgba(24,26,49,.96));border:1px solid rgba(151,166,230,.55);border-radius:16px;box-shadow:inset 0 0 0 1px rgba(137,154,211,.10);padding:clamp(14px,3vw,24px)!important;}
+.library-header3845{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px;}
+.library-header3845 h2{font-size:clamp(20px,3.6vw,29px);line-height:1.1;margin:7px 0 4px;color:#ecedff;}
+.library-header3845 .eyebrow{color:#b0bfed;letter-spacing:.15em;font-size:11px;}
+.library-counter3845{border:1px solid #536689;color:#bbcaff;border-radius:9px;padding:8px;font-size:12px;white-space:nowrap;}
+.library-hint3845{margin:8px 0 19px;color:#b6c1d8;font-size:clamp(13px,2vw,15px);line-height:1.55;}
+.library-label3845{font-size:12px;font-weight:700;letter-spacing:.15em;color:#c1cbed;margin:15px 0 10px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;}
+.library-label3845 small{font-size:11px;letter-spacing:0;font-weight:400;color:#97a6c6;}
+.library-chips3845{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;}
+.library-chip3845{appearance:none;-webkit-appearance:none;border:1px solid rgba(162,169,207,.28);border-radius:12px;min-width:0;min-height:96px;padding:12px 5px;background:rgba(12,18,34,.72);color:#8c95a8;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;cursor:pointer;transition:border-color .18s,background .18s;}
+.library-chip3845 .library-orb3845{display:grid;place-items:center;border-radius:50%;width:41px;height:41px;color:#a6abba;background:linear-gradient(145deg,#525869,#2a303e);border:1px solid #788198;font-size:18px;box-shadow:inset 0 0 6px #121820;}
+.library-chip3845>span:last-child{line-height:1.15;text-align:center;font-size:clamp(11px,1.8vw,14px);font-weight:700;}
+.library-chip3845.on{border-color:var(--tone);background:color-mix(in srgb,var(--tone) 12%,#141a2c);color:#eff6ff;}
+.library-chip3845.on .library-orb3845{background:var(--tone);color:#101423;box-shadow:0 0 16px color-mix(in srgb,var(--tone) 45%,transparent);border-color:#f2f3ff;}
+.library-chip3845.upper{--tone:#79b7ff;}.library-chip3845.lower{--tone:#ff81b3;}.library-chip3845.core{--tone:#c7b2ee;}.library-chip3845.cardio{--tone:#ffb46a;}.library-chip3845.mobility{--tone:#7ddeb7;}
+.library-times3845{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;}
+.library-time3845{appearance:none;border:1px solid #45516e;border-radius:11px;padding:12px 5px;min-height:74px;min-width:0;background:#171d30;color:#abb7ce;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;flex-direction:column;gap:3px;cursor:pointer;}
+.library-time3845 span{font-size:23px;color:#b9c7ec;line-height:1;}.library-time3845 b{font-size:clamp(11px,1.9vw,15px)}.library-time3845 small{font-size:10px;color:#a8b1ca;}
+.library-time3845.on{border-color:#b7c9ff;background:linear-gradient(140deg,#334869,#292944);color:#fff;box-shadow:inset 0 0 0 1px #728dc1;}
+.library-generator3845 button:focus-visible{outline:3px solid #f3edff;outline-offset:2px;}
+.library-generate3845{margin:18px 0 4px!important;min-height:52px!important;font-weight:800;letter-spacing:.04em;}
+.library-generated3845{display:flex;align-items:flex-start;gap:7px;flex-wrap:wrap;border-top:1px solid #54617c;padding-top:13px;margin-top:13px;color:#dbe7ff;font-size:13px;}
+.library-generated3845 span{flex-basis:100%;color:#b1bed8;}.library-generated3845 button{color:#d2bcff;margin:0;padding:4px 0;}
+.library-status3845{margin:11px 0 2px;color:#b5e2ff;font-size:12px;line-height:1.4;}
+.library-generated-card3845{border-color:rgba(147,179,240,.50)!important;}
+.library-generated-card3845 ul li{margin:3px 0;}
+@media (max-width:430px){.library-chips3845{grid-template-columns:repeat(2,minmax(0,1fr));}.library-chip3845{min-height:84px}.library-header3845{align-items:flex-start}.library-counter3845{font-size:10px;}}
+@media (prefers-reduced-motion:reduce){.library-chip3845{transition:none!important;}}

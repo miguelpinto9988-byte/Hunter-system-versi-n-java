@@ -1,0 +1,28 @@
+/* Hunter 38.75 - mobile WebView compositing tuning.
+ * Preserve geometry, hit targets, color theme and readable contrast.
+ * Blurred compositing on sticky/fixed surfaces has disproportionate cost while
+ * scrolling: replace with an opaque themed fill and light single shadows. */
+.nav, html[data-theme] .nav {
+  -webkit-backdrop-filter:none !important;
+  backdrop-filter:none !important;
+  box-shadow:0 -2px 10px #0005 !important;
+}
+dialog::backdrop, dialog#modal::backdrop {
+  -webkit-backdrop-filter:none !important;
+  backdrop-filter:none !important;
+}
+dialog .modal-close-x, dialog .modal-back25 {
+  -webkit-backdrop-filter:none !important;
+  backdrop-filter:none !important;
+}
+@media (max-width:700px) {
+  /* Reduce large dynamic glows without removing static decorative frames. */
+  .shadow-aura31::before, .shadow-aura31::after {
+    filter:none !important;
+  }
+  .nav {background:var(--input,#111a29) !important;}
+  .window-actions26 {box-shadow:0 2px 8px #0005 !important;}
+}
+@media (prefers-reduced-motion:reduce) {
+  .shadow-aura31 i, .boot-orbit30 {animation:none !important;}
+}

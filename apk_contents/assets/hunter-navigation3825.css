@@ -1,0 +1,18 @@
+/* Shared navigation transitions: modest duration, original colors and layout preserved. */
+@supports (view-transition-name: hunter-header3825) {
+  .topbar .brand { view-transition-name: hunter-header3825; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root), ::view-transition-new(root) {
+    animation-duration: 140ms;
+    animation-timing-function: ease-out;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root), ::view-transition-new(root),
+  ::view-transition-old(hunter-header3825), ::view-transition-new(hunter-header3825) {
+    animation: none !important;
+  }
+}
+html[data-hunter-fx385="eco"] ::view-transition-old(root),
+html[data-hunter-fx385="eco"] ::view-transition-new(root) { animation: none !important; }

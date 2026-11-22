@@ -1,0 +1,9 @@
+/* Hunter System V38.55 — six independent routes, persistent navigation */
+.nav-routes3855 button{min-width:0;touch-action:manipulation}
+.nav-routes3855 button[aria-current="page"]{color:var(--cyan);font-weight:700}
+.hunter-calendar3855 h1{margin:9px 0 14px}
+.hunter-calendar3855__main{margin-top:22px}
+.hunter-calendar3855 .quest button{white-space:nowrap}
+.hunter-calendar3855 .card{min-width:0}
+@media(max-width:430px){.nav-routes3855{gap:0!important}.nav-routes3855 button{padding-inline:1px!important}.nav-routes3855 button span{font-size:9px!important;letter-spacing:0!important}.nav-routes3855 button svg{width:19px;height:19px}}
+@media(prefers-reduced-motion:reduce){.nav-routes3855 *{transition:none!important;animation:none!important}}
