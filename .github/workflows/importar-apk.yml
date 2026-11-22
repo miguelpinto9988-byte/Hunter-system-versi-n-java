@@ -19,7 +19,7 @@ jobs:
           set -euo pipefail
           test -d transfer_parts
           count=$(find transfer_parts -maxdepth 1 -name 'part-*.bin' -type f | wc -l)
-          test "$count" -eq 42
+          test "$count" -eq 83
           find transfer_parts -maxdepth 1 -name 'part-*.bin' -type f -print0 | sort -z | xargs -0 cat > /tmp/hunter_system_3879.zip
           echo '8cb31c387322f21ba5239f9719613c35cb2d1baad5493bf711424669ee8ffd5c  /tmp/hunter_system_3879.zip' | sha256sum --check
           python3 - <<'PY'
