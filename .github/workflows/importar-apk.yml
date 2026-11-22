@@ -9,35 +9,32 @@ permissions:
 jobs:
   importar:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 40
     steps:
       - name: Obtener repositorio
         uses: actions/checkout@v4
-      - name: Comprobar y descomprimir respaldo
+      - name: Verificar y extraer respaldo
         shell: bash
         run: |
           set -euo pipefail
-          test -d transfer_parts
           count=$(find transfer_parts -maxdepth 1 -name 'part-*.bin' -type f | wc -l)
-          test "$count" -eq 83
+          test "$count" -eq 87
           find transfer_parts -maxdepth 1 -name 'part-*.bin' -type f -print0 | sort -z | xargs -0 cat > /tmp/hunter_system_3879.zip
           echo '8cb31c387322f21ba5239f9719613c35cb2d1baad5493bf711424669ee8ffd5c  /tmp/hunter_system_3879.zip' | sha256sum --check
           python3 - <<'PY'
           from pathlib import Path
           from zipfile import ZipFile
-          source=Path('/tmp/hunter_system_3879.zip')
-          with ZipFile(source) as archive:
-              if archive.testzip() is not None:
-                  raise RuntimeError('Un archivo del paquete está dañado')
+          with ZipFile('/tmp/hunter_system_3879.zip') as archive:
+              assert archive.testzip() is None, 'Archivo ZIP dañado'
               for name in archive.namelist():
-                  path=Path(name)
-                  if path.is_absolute() or '..' in path.parts:
-                      raise RuntimeError(f'Ruta no permitida: {name}')
+                  p=Path(name)
+                  if p.is_absolute() or '..' in p.parts:
+                      raise RuntimeError(f'Ruta insegura: {name}')
               archive.extractall('.')
           PY
-      - name: Verificar archivos extraídos
+      - name: Verificar hashes de todos los archivos exportados
         run: python3 tools/verificar_contenido.py
-      - name: Publicar archivos sin los fragmentos temporales
+      - name: Publicar el código y eliminar fragmentos temporales
         shell: bash
         run: |
           set -euo pipefail
@@ -45,5 +42,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git rm -r -q transfer_parts
           git add -A
-          git commit -m "Importar código y recursos Hunter System 38.79 desde APK"
+          git commit -m "Publicar Hunter System 38.79: código, animaciones y recursos"
           git push origin HEAD:main
