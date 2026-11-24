@@ -25,7 +25,7 @@ submitProfile=function(ev){
  const f=ev.target,gear=Object.keys(Training23.gymEquipment).filter(k=>f.elements['gym_'+k].checked),gym=f.elements.equipment.value==='gym',before=state.profile;
  if(gym&&!gear.length){ev.preventDefault();return toast('Marca el equipo disponible en tu gimnasio.');}
  V23UI.submitProfile(ev);
- if(state.profile&&state.profile!==before){state.profile.gymEquipment23=gear;if(gym){state.profile.load=0;state.profile.bench=gear.includes('bench');}currentCycle();save();render();}
+ if(state.profile&&state.profile!==before){state.profile.gymEquipment23=gear;if(gym){if(!state.profile.equipmentModes3880?.includes('db'))state.profile.load=0;state.profile.bench=gear.includes('bench');}currentCycle();save();render();}
 };
 currentCycle=function(){
  const c=V23UI.currentCycle();if(!c||!state.profile)return c;
