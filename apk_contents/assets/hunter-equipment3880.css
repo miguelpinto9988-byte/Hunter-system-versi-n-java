@@ -1,0 +1,29 @@
+/* Hunter System 38.80 — selección múltiple compacta y accesible. */
+#profileForm .legacy-equipment3880{display:none!important}
+#profileForm .equipment-modes3880{
+ margin:12px 0 18px;padding:18px;border-radius:16px;
+ border:1px solid var(--line,rgba(135,174,208,.28));min-width:0;
+ background:rgba(84,145,177,.055)
+}
+#profileForm .equipment-modes3880 legend{font-weight:700;padding:0 7px;color:var(--text,#e8f2f8)}
+#profileForm .equipment-modes3880 .footnote{margin:7px 0 12px}
+#profileForm .equipment-grid3880{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+#profileForm .equipment-mode3880{
+ display:flex;align-items:flex-start;gap:11px;cursor:pointer;
+ padding:14px;border:1px solid rgba(146,178,210,.3);border-radius:12px;
+ background:rgba(0,0,0,.12);transition:border-color .16s,background .16s
+}
+#profileForm .equipment-mode3880.selected3880{
+ border-color:var(--cyan,#6be2e8);background:rgba(70,187,198,.11)
+}
+#profileForm .equipment-mode3880 input[type=checkbox]{
+ flex-shrink:0;margin:3px 0 0;width:20px;height:20px;accent-color:var(--cyan,#6be2e8)
+}
+#profileForm .equipment-mode-copy3880{display:grid;gap:4px;min-width:0}
+#profileForm .equipment-mode-copy3880 strong{font-size:14px}
+#profileForm .equipment-mode-copy3880 small{font-size:12px;opacity:.85;line-height:1.35}
+#profileForm .equipment-mode3880:focus-within{outline:2px solid var(--cyan,#6be2e8);outline-offset:2px}
+#profileForm .equipment-summary3880{min-height:1.2em}
+@media(max-width:460px){#profileForm .equipment-grid3880{grid-template-columns:1fr}}
+
+#profileForm .gym-equipment23[hidden],#profileForm .field[hidden]{display:none!important}
