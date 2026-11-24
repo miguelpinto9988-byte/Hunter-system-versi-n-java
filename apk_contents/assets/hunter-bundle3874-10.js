@@ -664,7 +664,7 @@ E.byId=id=>byId.get(id)||classicById(id);
 const available=E.exercises.filter(e=>VERIFIED_IDS.has(e.id)&&e.modelPath30&&e.demoPath30&&
   ['Fuerza','Cardio','Movilidad'].includes(e.category)&&e.group&&Array.isArray(e.zones)&&
   typeof e.level==='number'&&Array.isArray(e.requirements));
-const fieldNames=['age','goal','goalGroup','finalGoal','finalTarget','focus','difficulty','experience','equipment',
+const fieldNames=['age','goal','goalGroup','finalGoal','finalTarget','focus','difficulty','experience','equipment','equipmentModes3880',
  'gymEquipment23','bench','step','minutes','frequency','dailyMissions','routineExercises3878','trainingMode','trainingScale',
  'weekPlan','weekFocus','injuries','restrictions','health','limits','preferredTrainer','load','restSeconds','materials46','capabilities46','dynamicRequestedFocus3847'];
 const asJSON=o=>JSON.stringify(o??null);
@@ -738,7 +738,60 @@ function dose(e,p,kind,status,history,date){
   dynamic381:true,originDate381:date,preview2D381:'demos30/'+e.id+'.svg',
   noAutoLoad:gentle||low,safetyNote:gentle?'Dosis inicial conservadora; interrumpe si hay dolor nuevo o empeoramiento.':'Respeta técnica y recuperaciones.'};
 }
+// Compatibilidad: el campo equipment de versiones anteriores sigue siendo un único valor.
+// equipmentModes3880 es la selección explícita del usuario, que no se deduce del
+// nivel ni de los kilos. Cada rama conserva todos los filtros del motor original.
+function declaredModes3880(p){
+ const valid=['body','db','gym'];
+ if(Array.isArray(p?.equipmentModes3880))return valid.filter(x=>p.equipmentModes3880.includes(x));
+ return p?.equipment==='gym'?['body','db','gym']:p?.equipment==='db'?['body','db']:['body'];
+}
+function matchesMode3880(exercise,mode){
+ if(!exercise)return false;
+ if(mode==='gym')return exercise.gymOnly23===true||exercise.equipment==='gym';
+ if(mode==='db')return exercise.equipment==='db'&&!exercise.gymOnly23;
+ return exercise.equipment==='body'&&!exercise.gymOnly23;
+}
+function chooseCombined3880(p,kind,seed,logs,date,usedBases,tracker,weekIndex){
+ const status=gate(p);
+ if(!status.ok)return {items:[],blocked:status.reason,requested:kind};
+ if(kind==='rest')return {items:[],effective:'rest',requested:'rest'};
+ const modes=declaredModes3880(p);
+ if(!modes.length)return {items:[],blocked:'Selecciona al menos un tipo de equipamiento en Perfil.',requested:kind};
+ const baseCount=root.HunterMaterials3814?.sessionCap?.(p,kind,status)??Math.max(1,Math.min(7,Number(p.dailyMissions)||3));
+ const limit=Math.max(1,Math.min(7,root.HunterIntegration3869?.activityLimit?.(baseCount)??baseCount));
+ const streams=modes.map(mode=>{
+  const single={...p,equipment:mode,__singleMode3880:true,__onlyMode3880:mode};
+  const outcome=choose(single,kind,seed+'|'+mode,logs,date,new Set(),null,weekIndex);
+  return {mode,items:(outcome.items||[]).filter(x=>matchesMode3880(E.byId(x.id),mode))};
+ });
+ const result=[],seen=new Set(),families=new Set();
+ // Una primera pasada por modalidad evita que el peso corporal desplace siempre
+ // a las mancuernas y el gimnasio. Después se rellena el límite de la sesión.
+ for(let round=0;round<limit;round++){
+  let added=false;
+  for(const stream of streams){
+   if(result.length>=limit)break;
+   const index=stream.items.findIndex(x=>!seen.has(x.id)&&!families.has(root.HunterGroups49.family(E.byId(x.id))));
+   if(index<0)continue;
+   const x=stream.items.splice(index,1)[0];result.push(x);seen.add(x.id);
+   families.add(root.HunterGroups49.family(E.byId(x.id)));added=true;
+  }
+  if(!added)break;
+ }
+ // Solo se permiten categorías seleccionadas; si las familias disponibles son
+ // pocas, completar con otra variante del mismo patrón antes que introducir equipo ajeno.
+ for(const stream of streams)for(const x of stream.items){
+  if(result.length>=limit)break;
+  if(!seen.has(x.id)){result.push(x);seen.add(x.id);}
+ }
+ if(!result.length)return {items:[],blocked:'No hay ejercicios compatibles con el equipamiento marcado y las restricciones declaradas.',requested:kind};
+ for(const item of result){const ex=E.byId(item.id);if(ex)tracker?.add?.(date,ex,item.sets);}
+ return {items:result,effective:kind,requested:kind,substituted:false,count:result.length,mixedEquipment3880:true};
+}
 function choose(p,kind,seed,logs={},date=E.dateKey(),usedBases=new Set(),tracker=null,weekIndex=0){
+ if(Array.isArray(p?.equipmentModes3880)&&!p.__singleMode3880)
+  return chooseCombined3880(p,kind,seed,logs,date,usedBases,tracker,weekIndex);
  const status=gate(p);if(!status.ok)return {items:[],blocked:status.reason,requested:kind};
  if(kind==='rest')return {items:[],effective:'rest',requested:'rest'};
  // Mantener el tipo elegido en el calendario. Ante catálogo incompatible, pedir revisión en vez de cambiar fuerza por cardio/movilidad.
@@ -751,6 +804,7 @@ function choose(p,kind,seed,logs={},date=E.dateKey(),usedBases=new Set(),tracker
  const allowedStrengthGroups=dailyFocus&&dailyFocus!=='general'?new Set(goalGroups[dailyFocus]):null;
  for(const type of options){
   list=pool(p,type);
+  if(p.__onlyMode3880)list=list.filter(e=>matchesMode3880(e,p.__onlyMode3880));
   if(type==='strength'&&allowedStrengthGroups)list=list.filter(e=>root.HunterGroups49.matches(e,dailyFocus));
   if(list.length){effective=type;break;}
  }
@@ -763,6 +817,7 @@ function choose(p,kind,seed,logs={},date=E.dateKey(),usedBases=new Set(),tracker
  // suficientes; no cambiar p.difficulty ni habilitar saltos/potencia.
  if(levelContext?.preview){
    let options=pool({...p,difficulty:'advanced'},effective);
+   if(p.__onlyMode3880)options=options.filter(e=>matchesMode3880(e,p.__onlyMode3880));
    if(effective==='strength'&&allowedStrengthGroups)options=options.filter(e=>root.HunterGroups49.matches(e,dailyFocus));
    const merged=new Map([...list,...options].map(e=>[e.id,e]));list=[...merged.values()];
  }
