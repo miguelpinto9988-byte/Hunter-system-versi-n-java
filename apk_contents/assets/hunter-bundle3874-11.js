@@ -337,7 +337,7 @@ root.HunterUnified3827=Object.freeze({version:'38.27',records,dose,gymTemplates,
  const clone=value=>JSON.parse(JSON.stringify(value));
  const changedFields=['age','limits','injuries','restrictions','health','goalAutoRestrictions374',
   'goal','finalGoal','finalTarget','focus','difficulty','trainingScale','trainingMode','experience',
-  'weekPlan','weekFocus','equipment','gymEquipment23','load','minutes','restSeconds','dailyMissions',
+  'weekPlan','weekFocus','equipment','equipmentModes3880','gymEquipment23','load','minutes','restSeconds','dailyMissions',
   'routineExercises3878','timeZone','frequency','preferredTrainer','bench','step','preferences','physicalLimits','materials46','capabilities46'];
  const fingerprint=p=>JSON.stringify(changedFields.map(k=>[k,p?.[k]??null]));
  const kinds={train:'strength',cardio:'cardio',mobility:'recovery',rest:'rest'};
