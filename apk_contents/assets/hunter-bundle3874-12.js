@@ -185,7 +185,7 @@
  }
  function accepted(items,t){return Array.isArray(items)&&items.length>0&&items.every(x=>matches(x,t));}
  function fingerprint(p,t){return JSON.stringify({groupsVersion:root.HunterGroups49.version,t,goal:p?.goal,difficulty:p?.difficulty,
-  equipment:p?.equipment,gymEquipment23:p?.gymEquipment23,age:p?.age,materials46:p?.materials46,capabilities46:p?.capabilities46,
+  equipment:p?.equipment,equipmentModes3880:p?.equipmentModes3880,gymEquipment23:p?.gymEquipment23,age:p?.age,materials46:p?.materials46,capabilities46:p?.capabilities46,
   minutes:p?.minutes,injuries:p?.injuries,restrictions:p?.restrictions,
   health:p?.health,limits:p?.limits,trainingScale:p?.trainingScale});}
  function past(logs,date){return Object.fromEntries(Object.entries(logs||{}).filter(([d])=>d<date));}
