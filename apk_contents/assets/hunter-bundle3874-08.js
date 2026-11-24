@@ -181,7 +181,7 @@ const FIELDS = {
   identidad:['name','age','height','weight','gender'],
   metas:['goalGroup','finalTarget','finalGoal','goal','focus','difficulty','trainingScale'],
   calendario:['weekPlan','frequency','dailyMissions'],
-  entrenamiento:['experience','equipment','load','bench','step','restSeconds','minutes'],
+  entrenamiento:['experience','equipment','equipmentModes3880','gymEquipment23','load','bench','step','restSeconds','minutes'],
   modalidad:['trainingMode','preferredTrainer'],
   salud:['injuries','restrictions','recommendations','health','limits','goalAutoRestrictions374'],
   acompanante:['companionCharacter','companionStyle','animate'],
@@ -246,7 +246,7 @@ function dialog377({initial,groups,profile,goal,updated,validKeys,planStatus}){
  modal(`<section class="profile-confirm377" role="status" aria-live="polite">
  <span class="eyebrow">HUNTER SYSTEM · PERFIL UNIFICADO</span><h2>${initial?'Perfil creado y guardado':'Perfil actualizado y guardado'}</h2>
  <p>El acompañante revisó los criterios guardados de tu perfil mediante reglas locales.</p>
- <div class="profile-confirm-box377"><b>Preferencias analizadas</b><p>${ESC(labels.join(' · '))}</p><p><strong>Objetivo:</strong> ${ESC(goals)}</p><p><strong>Semana:</strong> ${ESC(weekSummary(profile))}</p><p><strong>Modalidad:</strong> ${ESC(mode)} · <strong>Nivel:</strong> ${ESC(NAMED[profile.difficulty]||profile.difficulty||'Básico')}</p><p><strong>Equipo:</strong> ${ESC(profile.equipment==='db'?'Mancuernas y peso corporal':'Peso corporal')} · <strong>Acompañante:</strong> ${ESC((typeof CompanionNames!=='undefined'&&CompanionNames[profile.companionCharacter])||profile.companionCharacter||'Elegido')}</p></div>
+ <div class="profile-confirm-box377"><b>Preferencias analizadas</b><p>${ESC(labels.join(' · '))}</p><p><strong>Objetivo:</strong> ${ESC(goals)}</p><p><strong>Semana:</strong> ${ESC(weekSummary(profile))}</p><p><strong>Modalidad:</strong> ${ESC(mode)} · <strong>Nivel:</strong> ${ESC(NAMED[profile.difficulty]||profile.difficulty||'Básico')}</p><p><strong>Equipo:</strong> ${ESC((Array.isArray(profile.equipmentModes3880)?profile.equipmentModes3880:(profile.equipment==='gym'?['body','db','gym']:profile.equipment==='db'?['body','db']:['body'])).map(k=>({body:'Peso corporal',db:'Mancuernas',gym:'Gimnasio'}[k]||k)).join(' + '))} · <strong>Acompañante:</strong> ${ESC((typeof CompanionNames!=='undefined'&&CompanionNames[profile.companionCharacter])||profile.companionCharacter||'Elegido')}</p></div>
  <p class="notice">${ESC(status)}</p>
  ${health?'<p class="footnote">Hay condiciones o restricciones declaradas. Estas reglas no realizan una valoración médica ni verifican tu postura.</p>':''}
  <p class="footnote">${validKeys} campos del formulario fueron revisados para identificar los ajustes. Se comparó la configuración guardada. Los datos permanecen en el almacenamiento local de la aplicación.</p>
