@@ -1,0 +1,3023 @@
+{
+  "stages": [
+    "stage0",
+    "stage1",
+    "stage2",
+    "stage3",
+    "stage4",
+    "stage5",
+    "stage6",
+    "stage7",
+    "stage8",
+    "stage9",
+    "stage10",
+    "stage11",
+    "stage12",
+    "stage13"
+  ],
+  "links": {
+    "hunter-bundle3874-01.js": [
+      {
+        "compiled": "hunter-native3875.js"
+      },
+      {
+        "unit": "engine.js",
+        "group": "stage0",
+        "top": []
+      },
+      {
+        "unit": "catalog.js",
+        "group": "stage0",
+        "top": []
+      },
+      {
+        "unit": "catalog-v3.js",
+        "group": "stage0",
+        "top": []
+      }
+    ],
+    "knowledge.js": [
+      {
+        "unit": "knowledge.js",
+        "group": "stage0",
+        "top": [
+          {
+            "name": "TrainingSources",
+            "kind": "const"
+          },
+          {
+            "name": "TrainingGuides",
+            "kind": "const"
+          }
+        ]
+      }
+    ],
+    "hunter-bundle3874-02.js": [
+      {
+        "unit": "adapt.js",
+        "group": "stage0",
+        "top": []
+      },
+      {
+        "unit": "learning.js",
+        "group": "stage0",
+        "top": []
+      },
+      {
+        "unit": "coach.js",
+        "group": "stage0",
+        "top": []
+      },
+      {
+        "unit": "schedule.js",
+        "group": "stage0",
+        "top": []
+      },
+      {
+        "unit": "objectives.js",
+        "group": "stage0",
+        "top": []
+      },
+      {
+        "unit": "intent.js",
+        "group": "stage0",
+        "top": []
+      },
+      {
+        "unit": "goals-v14.js",
+        "group": "stage0",
+        "top": []
+      }
+    ],
+    "body-knowledge.js": [
+      {
+        "unit": "body-knowledge.js",
+        "group": "stage0",
+        "top": [
+          {
+            "name": "BodySources",
+            "kind": "const"
+          },
+          {
+            "name": "BodyKnowledge",
+            "kind": "const"
+          },
+          {
+            "name": "bodySearch",
+            "kind": "var"
+          }
+        ]
+      }
+    ],
+    "hunter-bundle3874-03.js": [
+      {
+        "unit": "expansion.js",
+        "group": "stage0",
+        "top": []
+      },
+      {
+        "unit": "source-exercises.js",
+        "group": "stage0",
+        "top": []
+      },
+      {
+        "unit": "source-exercises-v13.js",
+        "group": "stage0",
+        "top": []
+      },
+      {
+        "unit": "exercises-v14.js",
+        "group": "stage0",
+        "top": []
+      },
+      {
+        "unit": "exercises-v18.js",
+        "group": "stage0",
+        "top": []
+      },
+      {
+        "unit": "exercises-v19.js",
+        "group": "stage1",
+        "top": []
+      },
+      {
+        "unit": "exercise-pack-v23.js",
+        "group": "stage1",
+        "top": []
+      },
+      {
+        "unit": "catalogue-v30.js",
+        "group": "stage1",
+        "top": []
+      },
+      {
+        "unit": "injury-v93.js",
+        "group": "stage1",
+        "top": []
+      },
+      {
+        "unit": "adaptive-v9.js",
+        "group": "stage1",
+        "top": []
+      },
+      {
+        "unit": "training-intensity.js",
+        "group": "stage1",
+        "top": []
+      },
+      {
+        "unit": "weekly.js",
+        "group": "stage1",
+        "top": []
+      },
+      {
+        "unit": "creator-feed.js",
+        "group": "stage1",
+        "top": []
+      }
+    ],
+    "hunter-bundle3874-04.js": [
+      {
+        "unit": "source-sequences.js",
+        "group": "stage1",
+        "top": []
+      },
+      {
+        "unit": "source-sequences-v13.js",
+        "group": "stage1",
+        "top": []
+      },
+      {
+        "compiled": "routine-sequence.js"
+      },
+      {
+        "unit": "routine-planner.js",
+        "group": "stage1",
+        "top": []
+      },
+      {
+        "unit": "routines-v14.js",
+        "group": "stage1",
+        "top": []
+      },
+      {
+        "unit": "planning-v14.js",
+        "group": "stage1",
+        "top": []
+      },
+      {
+        "unit": "characters.js",
+        "group": "stage1",
+        "top": []
+      },
+      {
+        "unit": "depth-motion.js",
+        "group": "stage1",
+        "top": []
+      }
+    ],
+    "character-depth.js": [
+      {
+        "unit": "character-depth.js",
+        "group": "stage1",
+        "top": []
+      }
+    ],
+    "hunter-bundle3874-05.js": [
+      {
+        "unit": "animation.js",
+        "group": "stage1",
+        "top": []
+      },
+      {
+        "unit": "mesh3d.js",
+        "group": "stage2",
+        "top": []
+      },
+      {
+        "unit": "exercise-3d.js",
+        "group": "stage2",
+        "top": []
+      }
+    ],
+    "anatomy-model.js": [
+      {
+        "unit": "anatomy-model.js",
+        "group": "stage2",
+        "top": []
+      }
+    ],
+    "character-3d.js": [
+      {
+        "unit": "character-3d.js",
+        "group": "stage2",
+        "top": []
+      }
+    ],
+    "app.js": [
+      {
+        "unit": "app.js",
+        "group": "stage2",
+        "top": [
+          {
+            "name": "E",
+            "kind": "const"
+          },
+          {
+            "name": "KEY",
+            "kind": "const"
+          },
+          {
+            "name": "state",
+            "kind": "let"
+          },
+          {
+            "name": "tab",
+            "kind": "let"
+          },
+          {
+            "name": "filter",
+            "kind": "let"
+          },
+          {
+            "name": "query",
+            "kind": "let"
+          },
+          {
+            "name": "timerEnd",
+            "kind": "let"
+          },
+          {
+            "name": "$",
+            "kind": "const"
+          },
+          {
+            "name": "esc",
+            "kind": "const"
+          },
+          {
+            "name": "storageError",
+            "kind": "let"
+          },
+          {
+            "name": "pendingRestore46",
+            "kind": "let"
+          },
+          {
+            "name": "save",
+            "kind": "var"
+          },
+          {
+            "name": "toast",
+            "kind": "var"
+          },
+          {
+            "name": "icons",
+            "kind": "const"
+          },
+          {
+            "name": "icon",
+            "kind": "var"
+          },
+          {
+            "name": "header",
+            "kind": "var"
+          },
+          {
+            "name": "nav",
+            "kind": "var"
+          },
+          {
+            "name": "go",
+            "kind": "var"
+          },
+          {
+            "name": "currentCycle",
+            "kind": "var"
+          },
+          {
+            "name": "kindLabel",
+            "kind": "const"
+          },
+          {
+            "name": "todayDay",
+            "kind": "var"
+          },
+          {
+            "name": "render",
+            "kind": "var"
+          },
+          {
+            "name": "profileForm",
+            "kind": "var"
+          },
+          {
+            "name": "submitProfile",
+            "kind": "var"
+          },
+          {
+            "name": "blocked",
+            "kind": "var"
+          },
+          {
+            "name": "home",
+            "kind": "var"
+          },
+          {
+            "name": "calendar",
+            "kind": "var"
+          },
+          {
+            "name": "plan",
+            "kind": "var"
+          },
+          {
+            "name": "modal",
+            "kind": "var"
+          },
+          {
+            "name": "dayDetail",
+            "kind": "var"
+          },
+          {
+            "name": "book",
+            "kind": "var"
+          },
+          {
+            "name": "exerciseCards",
+            "kind": "var"
+          },
+          {
+            "name": "searchExercises",
+            "kind": "var"
+          },
+          {
+            "name": "technique",
+            "kind": "var"
+          },
+          {
+            "name": "getLog",
+            "kind": "var"
+          },
+          {
+            "name": "workout",
+            "kind": "var"
+          },
+          {
+            "name": "changeSet",
+            "kind": "var"
+          },
+          {
+            "name": "toggleSet",
+            "kind": "var"
+          },
+          {
+            "name": "feedback",
+            "kind": "var"
+          },
+          {
+            "name": "finish",
+            "kind": "var"
+          },
+          {
+            "name": "stopPain",
+            "kind": "var"
+          },
+          {
+            "name": "confirmPain",
+            "kind": "var"
+          },
+          {
+            "name": "editExercise",
+            "kind": "var"
+          },
+          {
+            "name": "applyExercise",
+            "kind": "var"
+          },
+          {
+            "name": "startTimer",
+            "kind": "var"
+          },
+          {
+            "name": "timerText",
+            "kind": "var"
+          },
+          {
+            "name": "updateClock",
+            "kind": "var"
+          },
+          {
+            "name": "history",
+            "kind": "var"
+          },
+          {
+            "name": "profile",
+            "kind": "var"
+          },
+          {
+            "name": "exportBackup",
+            "kind": "var"
+          },
+          {
+            "name": "importBackup",
+            "kind": "var"
+          },
+          {
+            "name": "readFile",
+            "kind": "var"
+          },
+          {
+            "name": "pendingImport",
+            "kind": "let"
+          },
+          {
+            "name": "receiveBackup",
+            "kind": "var"
+          },
+          {
+            "name": "confirmImport",
+            "kind": "var"
+          },
+          {
+            "name": "validateBackup",
+            "kind": "var"
+          },
+          {
+            "name": "lastDate",
+            "kind": "let"
+          }
+        ]
+      }
+    ],
+    "v2.js": [
+      {
+        "unit": "v2.js",
+        "group": "stage2",
+        "top": [
+          {
+            "name": "base",
+            "kind": "const"
+          },
+          {
+            "name": "routineCategory",
+            "kind": "let"
+          },
+          {
+            "name": "routineQuery",
+            "kind": "let"
+          },
+          {
+            "name": "routineAvailable",
+            "kind": "let"
+          },
+          {
+            "name": "exerciseCategory",
+            "kind": "let"
+          },
+          {
+            "name": "exerciseLevel",
+            "kind": "let"
+          },
+          {
+            "name": "exerciseMuscle",
+            "kind": "let"
+          },
+          {
+            "name": "exerciseEquip",
+            "kind": "let"
+          },
+          {
+            "name": "pendingRoutine",
+            "kind": "let"
+          },
+          {
+            "name": "reminderStatus",
+            "kind": "let"
+          },
+          {
+            "name": "workEnd",
+            "kind": "let"
+          },
+          {
+            "name": "workLabel",
+            "kind": "let"
+          },
+          {
+            "name": "builderItems",
+            "kind": "let"
+          },
+          {
+            "name": "defaultReminders",
+            "kind": "const"
+          },
+          {
+            "name": "normalizeV2",
+            "kind": "var"
+          },
+          {
+            "name": "decorateRoutine",
+            "kind": "var"
+          },
+          {
+            "name": "baseModal",
+            "kind": "const"
+          },
+          {
+            "name": "pulse",
+            "kind": "var"
+          },
+          {
+            "name": "icon2",
+            "kind": "var"
+          },
+          {
+            "name": "baseGo",
+            "kind": "const"
+          },
+          {
+            "name": "panelTabs",
+            "kind": "var"
+          },
+          {
+            "name": "shell3855",
+            "kind": "const"
+          },
+          {
+            "name": "lastSceneMarkup3874",
+            "kind": "let"
+          },
+          {
+            "name": "canonicalScene3874",
+            "kind": "const"
+          },
+          {
+            "name": "syncNative",
+            "kind": "var"
+          },
+          {
+            "name": "goalDone",
+            "kind": "var"
+          },
+          {
+            "name": "goalMini",
+            "kind": "var"
+          },
+          {
+            "name": "goalsView",
+            "kind": "var"
+          },
+          {
+            "name": "newGoal",
+            "kind": "var"
+          },
+          {
+            "name": "addGoal",
+            "kind": "var"
+          },
+          {
+            "name": "toggleGoal",
+            "kind": "var"
+          },
+          {
+            "name": "deleteGoal",
+            "kind": "var"
+          },
+          {
+            "name": "quickFinish",
+            "kind": "var"
+          },
+          {
+            "name": "confirmQuickFinish",
+            "kind": "var"
+          },
+          {
+            "name": "completeExercise",
+            "kind": "var"
+          },
+          {
+            "name": "startExerciseTimer",
+            "kind": "var"
+          },
+          {
+            "name": "exerciseList",
+            "kind": "var"
+          },
+          {
+            "name": "refreshExercises",
+            "kind": "var"
+          },
+          {
+            "name": "allRoutines",
+            "kind": "var"
+          },
+          {
+            "name": "routineList",
+            "kind": "var"
+          },
+          {
+            "name": "routines",
+            "kind": "var"
+          },
+          {
+            "name": "routineCards",
+            "kind": "var"
+          },
+          {
+            "name": "refreshRoutines",
+            "kind": "var"
+          },
+          {
+            "name": "routineDetail",
+            "kind": "var"
+          },
+          {
+            "name": "routineHasActivity372",
+            "kind": "var"
+          },
+          {
+            "name": "routineNotice372",
+            "kind": "var"
+          },
+          {
+            "name": "prepareRoutine",
+            "kind": "var"
+          },
+          {
+            "name": "applyRoutine",
+            "kind": "var"
+          },
+          {
+            "name": "routineBuilder",
+            "kind": "var"
+          },
+          {
+            "name": "addBuilderItem",
+            "kind": "var"
+          },
+          {
+            "name": "builderRows",
+            "kind": "var"
+          },
+          {
+            "name": "saveCustomRoutine",
+            "kind": "var"
+          },
+          {
+            "name": "deleteRoutine",
+            "kind": "var"
+          },
+          {
+            "name": "remindersView",
+            "kind": "var"
+          },
+          {
+            "name": "updateReminderFields",
+            "kind": "var"
+          },
+          {
+            "name": "saveReminders",
+            "kind": "var"
+          },
+          {
+            "name": "refreshReminderStatus",
+            "kind": "var"
+          },
+          {
+            "name": "testNotification",
+            "kind": "var"
+          },
+          {
+            "name": "openNotificationSettings",
+            "kind": "var"
+          },
+          {
+            "name": "oldValidate",
+            "kind": "const"
+          }
+        ]
+      }
+    ],
+    "v3.js": [
+      {
+        "unit": "v3.js",
+        "group": "stage3",
+        "top": [
+          {
+            "name": "V2",
+            "kind": "const"
+          },
+          {
+            "name": "detailedMode",
+            "kind": "let"
+          },
+          {
+            "name": "missionDate",
+            "kind": "let"
+          },
+          {
+            "name": "draftAvatar",
+            "kind": "let"
+          },
+          {
+            "name": "injuryDraft",
+            "kind": "let"
+          },
+          {
+            "name": "showVariants",
+            "kind": "let"
+          },
+          {
+            "name": "profileFilter",
+            "kind": "let"
+          },
+          {
+            "name": "routineProfileFilter",
+            "kind": "let"
+          },
+          {
+            "name": "photoValid",
+            "kind": "const"
+          },
+          {
+            "name": "hasActivity",
+            "kind": "var"
+          },
+          {
+            "name": "migratePending",
+            "kind": "var"
+          },
+          {
+            "name": "avatarHtml",
+            "kind": "var"
+          },
+          {
+            "name": "profileForm",
+            "kind": "var"
+          },
+          {
+            "name": "injuryRowsHtml",
+            "kind": "var"
+          },
+          {
+            "name": "drawInjuries",
+            "kind": "var"
+          },
+          {
+            "name": "addInjuryRow",
+            "kind": "var"
+          },
+          {
+            "name": "pickAvatar",
+            "kind": "var"
+          },
+          {
+            "name": "receiveAvatar",
+            "kind": "var"
+          },
+          {
+            "name": "readAvatar",
+            "kind": "var"
+          },
+          {
+            "name": "dayByDate",
+            "kind": "var"
+          },
+          {
+            "name": "ensureTasks",
+            "kind": "var"
+          },
+          {
+            "name": "ensureDayLog",
+            "kind": "var"
+          },
+          {
+            "name": "itemFinished",
+            "kind": "var"
+          },
+          {
+            "name": "missionSummary",
+            "kind": "var"
+          },
+          {
+            "name": "recomputeMission",
+            "kind": "var"
+          },
+          {
+            "name": "showMission",
+            "kind": "var"
+          },
+          {
+            "name": "missionWindow",
+            "kind": "var"
+          },
+          {
+            "name": "refreshMission",
+            "kind": "var"
+          },
+          {
+            "name": "toggleMissionItem",
+            "kind": "var"
+          },
+          {
+            "name": "toggleMissionTask",
+            "kind": "var"
+          },
+          {
+            "name": "saveMissionNote",
+            "kind": "var"
+          },
+          {
+            "name": "editMission",
+            "kind": "var"
+          },
+          {
+            "name": "saveMissionEdit",
+            "kind": "var"
+          },
+          {
+            "name": "oldTechnique",
+            "kind": "const"
+          },
+          {
+            "name": "historyV2",
+            "kind": "const"
+          },
+          {
+            "name": "validateV2",
+            "kind": "const"
+          }
+        ]
+      }
+    ],
+    "v4.js": [
+      {
+        "unit": "v4.js",
+        "group": "stage3",
+        "top": [
+          {
+            "name": "V3",
+            "kind": "const"
+          },
+          {
+            "name": "options",
+            "kind": "const"
+          },
+          {
+            "name": "applyTheme",
+            "kind": "var"
+          },
+          {
+            "name": "previewTheme",
+            "kind": "var"
+          },
+          {
+            "name": "knight",
+            "kind": "var"
+          },
+          {
+            "name": "gesture",
+            "kind": "var"
+          },
+          {
+            "name": "companion",
+            "kind": "var"
+          },
+          {
+            "name": "openCoach",
+            "kind": "var"
+          },
+          {
+            "name": "answerCoach",
+            "kind": "var"
+          },
+          {
+            "name": "askCoach",
+            "kind": "var"
+          },
+          {
+            "name": "saveCheckin",
+            "kind": "var"
+          },
+          {
+            "name": "recomputeV3",
+            "kind": "const"
+          }
+        ]
+      }
+    ],
+    "v5.js": [
+      {
+        "unit": "v5.js",
+        "group": "stage3",
+        "top": [
+          {
+            "name": "V4",
+            "kind": "const"
+          },
+          {
+            "name": "render5",
+            "kind": "const"
+          },
+          {
+            "name": "demoPlaying",
+            "kind": "let"
+          },
+          {
+            "name": "demoIndex",
+            "kind": "let"
+          },
+          {
+            "name": "toggleDemo",
+            "kind": "var"
+          },
+          {
+            "name": "demoStep",
+            "kind": "var"
+          },
+          {
+            "name": "sourceLink",
+            "kind": "var"
+          },
+          {
+            "name": "openAcademy",
+            "kind": "var"
+          },
+          {
+            "name": "oldOpenCoach",
+            "kind": "const"
+          },
+          {
+            "name": "motionTimeout",
+            "kind": "let"
+          },
+          {
+            "name": "coachMotion",
+            "kind": "var"
+          }
+        ]
+      }
+    ],
+    "v6.js": [
+      {
+        "unit": "v6.js",
+        "group": "stage3",
+        "top": [
+          {
+            "name": "Palette",
+            "kind": "const"
+          },
+          {
+            "name": "V5",
+            "kind": "const"
+          },
+          {
+            "name": "motionTimer",
+            "kind": "let"
+          },
+          {
+            "name": "closeTimer",
+            "kind": "let"
+          },
+          {
+            "name": "oldModal",
+            "kind": "const"
+          },
+          {
+            "name": "closeCoach",
+            "kind": "var"
+          }
+        ]
+      }
+    ],
+    "v7.js": [
+      {
+        "unit": "v7.js",
+        "group": "stage3",
+        "top": [
+          {
+            "name": "ThemeHues",
+            "kind": "const"
+          },
+          {
+            "name": "V6",
+            "kind": "const"
+          },
+          {
+            "name": "updateObjective",
+            "kind": "var"
+          }
+        ]
+      }
+    ],
+    "vector-player.js": [
+      {
+        "unit": "vector-player.js",
+        "group": "stage3",
+        "top": [
+          {
+            "name": "interpolateMotion",
+            "kind": "var"
+          },
+          {
+            "name": "groundCache13",
+            "kind": "const"
+          },
+          {
+            "name": "modelGround",
+            "kind": "var"
+          },
+          {
+            "name": "vectorSession",
+            "kind": "let"
+          },
+          {
+            "name": "vectorGeneration13",
+            "kind": "let"
+          },
+          {
+            "name": "drawVector",
+            "kind": "var"
+          },
+          {
+            "name": "startVector",
+            "kind": "var"
+          },
+          {
+            "name": "vectorPaint",
+            "kind": "var"
+          },
+          {
+            "name": "vectorTick",
+            "kind": "var"
+          },
+          {
+            "name": "vectorToggle",
+            "kind": "var"
+          },
+          {
+            "name": "vectorSeek",
+            "kind": "var"
+          },
+          {
+            "name": "vectorPanel",
+            "kind": "var"
+          }
+        ]
+      }
+    ],
+    "v8.js": [
+      {
+        "unit": "v8.js",
+        "group": "stage3",
+        "top": [
+          {
+            "name": "V7",
+            "kind": "const"
+          },
+          {
+            "name": "toggleTrainingDay",
+            "kind": "var"
+          },
+          {
+            "name": "interpretGoal",
+            "kind": "var"
+          },
+          {
+            "name": "bodyResults",
+            "kind": "var"
+          },
+          {
+            "name": "openBodyKnowledge",
+            "kind": "var"
+          }
+        ]
+      }
+    ],
+    "v9.js": [
+      {
+        "unit": "v9.js",
+        "group": "stage3",
+        "top": [
+          {
+            "name": "V8UI",
+            "kind": "const"
+          },
+          {
+            "name": "activeCompanion",
+            "kind": "let"
+          },
+          {
+            "name": "homeCompanion",
+            "kind": "let"
+          },
+          {
+            "name": "missionCompanion",
+            "kind": "let"
+          },
+          {
+            "name": "companionToken",
+            "kind": "let"
+          },
+          {
+            "name": "coachContext",
+            "kind": "let"
+          },
+          {
+            "name": "CompanionNames",
+            "kind": "const"
+          },
+          {
+            "name": "releaseCompanion",
+            "kind": "var"
+          },
+          {
+            "name": "mountPanelCompanion",
+            "kind": "var"
+          },
+          {
+            "name": "openAnimationGallery",
+            "kind": "var"
+          },
+          {
+            "name": "tokenize",
+            "kind": "const"
+          },
+          {
+            "name": "selectedCompanion",
+            "kind": "var"
+          },
+          {
+            "name": "missionCompanionCard",
+            "kind": "var"
+          },
+          {
+            "name": "V9Home",
+            "kind": "const"
+          },
+          {
+            "name": "V9Plan",
+            "kind": "const"
+          },
+          {
+            "name": "mountPersistentCompanion",
+            "kind": "var"
+          },
+          {
+            "name": "validate9",
+            "kind": "const"
+          }
+        ]
+      }
+    ],
+    "v93.js": [
+      {
+        "unit": "v93.js",
+        "group": "stage3",
+        "top": [
+          {
+            "name": "V92Runtime",
+            "kind": "const"
+          },
+          {
+            "name": "companionDisplayName",
+            "kind": "var"
+          },
+          {
+            "name": "CompanionMentionSource",
+            "kind": "const"
+          },
+          {
+            "name": "CompanionMentionPattern",
+            "kind": "const"
+          },
+          {
+            "name": "CompanionMentionCheck",
+            "kind": "const"
+          },
+          {
+            "name": "personalizeCompanionString",
+            "kind": "var"
+          },
+          {
+            "name": "syncKnownCompanionUI",
+            "kind": "var"
+          },
+          {
+            "name": "personalizeCompanionText",
+            "kind": "var"
+          },
+          {
+            "name": "previewCompanionChoice",
+            "kind": "var"
+          },
+          {
+            "name": "closeActiveModal",
+            "kind": "var"
+          },
+          {
+            "name": "fitActiveModal",
+            "kind": "var"
+          },
+          {
+            "name": "lockModalViewport",
+            "kind": "var"
+          },
+          {
+            "name": "unlockModalViewport",
+            "kind": "var"
+          },
+          {
+            "name": "decorateModal",
+            "kind": "var"
+          },
+          {
+            "name": "modalDialog",
+            "kind": "const"
+          },
+          {
+            "name": "injuryFocusSummary",
+            "kind": "var"
+          },
+          {
+            "name": "addCompanionAndInjuryContext",
+            "kind": "var"
+          },
+          {
+            "name": "openAnimationGallery",
+            "kind": "var"
+          }
+        ]
+      }
+    ],
+    "v10.js": [
+      {
+        "unit": "v10.js",
+        "group": "stage3",
+        "top": [
+          {
+            "name": "V10UI",
+            "kind": "const"
+          },
+          {
+            "name": "calendarMonth",
+            "kind": "let"
+          },
+          {
+            "name": "calendarYear",
+            "kind": "let"
+          },
+          {
+            "name": "routineMode",
+            "kind": "let"
+          },
+          {
+            "name": "creatorFilter",
+            "kind": "let"
+          },
+          {
+            "name": "feedBusy",
+            "kind": "let"
+          },
+          {
+            "name": "cycleBeforeCreatorPlanning",
+            "kind": "const"
+          },
+          {
+            "name": "setCreatorPlanning",
+            "kind": "var"
+          },
+          {
+            "name": "weeklyLanguage",
+            "kind": "var"
+          },
+          {
+            "name": "monthPanel",
+            "kind": "var"
+          },
+          {
+            "name": "changeMonth",
+            "kind": "var"
+          },
+          {
+            "name": "openMonthlyCalendar",
+            "kind": "var"
+          },
+          {
+            "name": "monthDayDetail",
+            "kind": "var"
+          },
+          {
+            "name": "weeklyProgressCard",
+            "kind": "var"
+          },
+          {
+            "name": "openCompleteRoutines",
+            "kind": "var"
+          },
+          {
+            "name": "routineModes",
+            "kind": "var"
+          },
+          {
+            "name": "allRoutines10",
+            "kind": "const"
+          },
+          {
+            "name": "creatorVideoCards",
+            "kind": "var"
+          },
+          {
+            "name": "openCreatorSources",
+            "kind": "var"
+          },
+          {
+            "name": "feedStatusText",
+            "kind": "var"
+          },
+          {
+            "name": "loadCreatorCache",
+            "kind": "var"
+          },
+          {
+            "name": "setCreatorSync",
+            "kind": "var"
+          },
+          {
+            "name": "refreshCreatorFeed",
+            "kind": "var"
+          },
+          {
+            "name": "creatorVideoDetail",
+            "kind": "var"
+          },
+          {
+            "name": "pendingCreatorRoutine",
+            "kind": "let"
+          },
+          {
+            "name": "readCreatorRoutine",
+            "kind": "var"
+          },
+          {
+            "name": "confirmCreatorRoutine",
+            "kind": "var"
+          },
+          {
+            "name": "sourceSequenceCard",
+            "kind": "var"
+          },
+          {
+            "name": "sourceTimer",
+            "kind": "var"
+          },
+          {
+            "name": "updateSourceClock",
+            "kind": "var"
+          },
+          {
+            "name": "validate10",
+            "kind": "const"
+          }
+        ]
+      }
+    ],
+    "v11.js": [
+      {
+        "unit": "v11.js",
+        "group": "stage3",
+        "top": [
+          {
+            "name": "V11UI",
+            "kind": "const"
+          },
+          {
+            "name": "trainerPage11",
+            "kind": "let"
+          },
+          {
+            "name": "ownLibrary11",
+            "kind": "let"
+          },
+          {
+            "name": "guide11",
+            "kind": "let"
+          },
+          {
+            "name": "guideFrame11",
+            "kind": "let"
+          },
+          {
+            "name": "pendingSources11",
+            "kind": "var"
+          },
+          {
+            "name": "verifiedSources11",
+            "kind": "var"
+          },
+          {
+            "name": "trainerTiles11",
+            "kind": "var"
+          },
+          {
+            "name": "selectTrainer11",
+            "kind": "var"
+          },
+          {
+            "name": "routinesIndex11",
+            "kind": "var"
+          },
+          {
+            "name": "sourceRoutineTile11",
+            "kind": "var"
+          },
+          {
+            "name": "trainerView11",
+            "kind": "var"
+          },
+          {
+            "name": "trainingModeFields11",
+            "kind": "var"
+          },
+          {
+            "name": "cycle11",
+            "kind": "const"
+          },
+          {
+            "name": "creatorBatch11",
+            "kind": "let"
+          },
+          {
+            "name": "readCreatorBatch11",
+            "kind": "var"
+          },
+          {
+            "name": "confirmCreatorBatch11",
+            "kind": "var"
+          },
+          {
+            "name": "guideButton11",
+            "kind": "var"
+          },
+          {
+            "name": "time11",
+            "kind": "const"
+          },
+          {
+            "name": "persistGuide11",
+            "kind": "var"
+          },
+          {
+            "name": "pauseGuide11",
+            "kind": "var"
+          },
+          {
+            "name": "guideValid11",
+            "kind": "var"
+          },
+          {
+            "name": "openGuidedSession11",
+            "kind": "var"
+          },
+          {
+            "name": "previewRoutine11",
+            "kind": "var"
+          },
+          {
+            "name": "startGuide11",
+            "kind": "var"
+          },
+          {
+            "name": "paintGuide11",
+            "kind": "var"
+          },
+          {
+            "name": "animateGuidedVector11",
+            "kind": "var"
+          },
+          {
+            "name": "toggleGuidedDemo11",
+            "kind": "var"
+          },
+          {
+            "name": "toggleGuideClock11",
+            "kind": "var"
+          },
+          {
+            "name": "updateGuideClock11",
+            "kind": "var"
+          },
+          {
+            "name": "advanceGuide11",
+            "kind": "var"
+          },
+          {
+            "name": "moveGuide11",
+            "kind": "var"
+          },
+          {
+            "name": "confirmGuideSet11",
+            "kind": "var"
+          },
+          {
+            "name": "finishGuide11",
+            "kind": "var"
+          },
+          {
+            "name": "painGuide11",
+            "kind": "var"
+          },
+          {
+            "name": "validGuideSave11",
+            "kind": "var"
+          }
+        ]
+      }
+    ],
+    "v12.js": [
+      {
+        "unit": "v12.js",
+        "group": "stage4",
+        "top": []
+      }
+    ],
+    "v13.js": [
+      {
+        "unit": "v13.js",
+        "group": "stage4",
+        "top": [
+          {
+            "name": "academyObserver15",
+            "kind": "let"
+          },
+          {
+            "name": "V13UI",
+            "kind": "const"
+          },
+          {
+            "name": "loadControl13",
+            "kind": "var"
+          },
+          {
+            "name": "pendingDay13",
+            "kind": "var"
+          },
+          {
+            "name": "rebuildPending13",
+            "kind": "var"
+          },
+          {
+            "name": "capacityForm13",
+            "kind": "var"
+          },
+          {
+            "name": "openCapacity13",
+            "kind": "var"
+          },
+          {
+            "name": "applyCapacity13",
+            "kind": "var"
+          },
+          {
+            "name": "afterCompletion13",
+            "kind": "var"
+          },
+          {
+            "name": "galleryActors13",
+            "kind": "const"
+          },
+          {
+            "name": "modal13",
+            "kind": "const"
+          },
+          {
+            "name": "clearGallery13",
+            "kind": "var"
+          },
+          {
+            "name": "sampleCompanion13",
+            "kind": "var"
+          }
+        ]
+      }
+    ],
+    "v14.js": [
+      {
+        "unit": "v14.js",
+        "group": "stage4",
+        "top": [
+          {
+            "name": "V14UI",
+            "kind": "const"
+          },
+          {
+            "name": "ownLevel14",
+            "kind": "let"
+          },
+          {
+            "name": "ownFamily14",
+            "kind": "let"
+          },
+          {
+            "name": "ownEquipment14",
+            "kind": "let"
+          },
+          {
+            "name": "ownLength14",
+            "kind": "let"
+          },
+          {
+            "name": "goalSelection14",
+            "kind": "var"
+          },
+          {
+            "name": "setCamera14",
+            "kind": "var"
+          },
+          {
+            "name": "cameraControls14",
+            "kind": "var"
+          },
+          {
+            "name": "planCard14",
+            "kind": "var"
+          },
+          {
+            "name": "ownLibraryView14",
+            "kind": "var"
+          },
+          {
+            "name": "staticActors14",
+            "kind": "const"
+          },
+          {
+            "name": "releaseStatic14",
+            "kind": "var"
+          },
+          {
+            "name": "previewModel14",
+            "kind": "var"
+          },
+          {
+            "name": "profileModels14",
+            "kind": "var"
+          },
+          {
+            "name": "mountStatic14",
+            "kind": "var"
+          },
+          {
+            "name": "gallery14",
+            "kind": "const"
+          }
+        ]
+      }
+    ],
+    "v15.js": [
+      {
+        "unit": "v15.js",
+        "group": "stage4",
+        "top": [
+          {
+            "name": "V15UI",
+            "kind": "const"
+          },
+          {
+            "name": "ReferenceVideo15",
+            "kind": "const"
+          },
+          {
+            "name": "isReference15",
+            "kind": "var"
+          },
+          {
+            "name": "videoHTML15",
+            "kind": "var"
+          },
+          {
+            "name": "pauseVideos15",
+            "kind": "var"
+          },
+          {
+            "name": "bindVideo15",
+            "kind": "var"
+          },
+          {
+            "name": "rate15",
+            "kind": "const"
+          }
+        ]
+      }
+    ],
+    "v16.js": [
+      {
+        "unit": "v16.js",
+        "group": "stage4",
+        "top": [
+          {
+            "name": "V16UI",
+            "kind": "const"
+          },
+          {
+            "name": "demoModes16",
+            "kind": "const"
+          },
+          {
+            "name": "demoViews16",
+            "kind": "const"
+          },
+          {
+            "name": "demoInfo16",
+            "kind": "var"
+          },
+          {
+            "name": "useHD16",
+            "kind": "var"
+          },
+          {
+            "name": "videoHTML16",
+            "kind": "var"
+          },
+          {
+            "name": "hdViewControls16",
+            "kind": "var"
+          },
+          {
+            "name": "viewHD16",
+            "kind": "var"
+          },
+          {
+            "name": "bindVideo16",
+            "kind": "var"
+          },
+          {
+            "name": "setDemoMode16",
+            "kind": "var"
+          }
+        ]
+      }
+    ],
+    "v17.js": [
+      {
+        "unit": "v17.js",
+        "group": "stage4",
+        "top": [
+          {
+            "name": "V17UI",
+            "kind": "const"
+          }
+        ]
+      }
+    ],
+    "hunter-bundle3874-06.js": [
+      {
+        "unit": "views-v21.js",
+        "group": "stage4",
+        "top": []
+      },
+      {
+        "unit": "rig-corrections-v23.js",
+        "group": "stage4",
+        "top": []
+      },
+      {
+        "unit": "rig-pack-v23.js",
+        "group": "stage5",
+        "top": []
+      },
+      {
+        "unit": "anatomy-2d-v22.js",
+        "group": "stage5",
+        "top": []
+      },
+      {
+        "unit": "rig-corrections-v24.js",
+        "group": "stage5",
+        "top": []
+      },
+      {
+        "unit": "motion-2d.js",
+        "group": "stage5",
+        "top": []
+      },
+      {
+        "unit": "routines-v18.js",
+        "group": "stage5",
+        "top": []
+      },
+      {
+        "unit": "progression-v19.js",
+        "group": "stage6",
+        "top": []
+      },
+      {
+        "unit": "goal-context-v24.js",
+        "group": "stage6",
+        "top": []
+      },
+      {
+        "unit": "training-v23.js",
+        "group": "stage6",
+        "top": []
+      }
+    ],
+    "v18.js": [
+      {
+        "unit": "v18.js",
+        "group": "stage6",
+        "top": [
+          {
+            "name": "V18UI",
+            "kind": "const"
+          },
+          {
+            "name": "cycleSeconds18",
+            "kind": "var"
+          },
+          {
+            "name": "trainerVideos18",
+            "kind": "var"
+          },
+          {
+            "name": "labels18",
+            "kind": "var"
+          },
+          {
+            "name": "modal18",
+            "kind": "const"
+          },
+          {
+            "name": "closeDialog18",
+            "kind": "const"
+          }
+        ]
+      }
+    ],
+    "v19.js": [
+      {
+        "unit": "v19.js",
+        "group": "stage6",
+        "top": [
+          {
+            "name": "V19UI",
+            "kind": "const"
+          },
+          {
+            "name": "levelHint19",
+            "kind": "var"
+          },
+          {
+            "name": "jumpGuide19",
+            "kind": "var"
+          },
+          {
+            "name": "storeGuideCheck19",
+            "kind": "var"
+          },
+          {
+            "name": "guideCheck19",
+            "kind": "var"
+          },
+          {
+            "name": "pendingGuide19",
+            "kind": "var"
+          },
+          {
+            "name": "expand19",
+            "kind": "const"
+          },
+          {
+            "name": "galleryCompanion19",
+            "kind": "var"
+          }
+        ]
+      }
+    ],
+    "progress-monitor-v20.js": [
+      {
+        "unit": "progress-monitor-v20.js",
+        "group": "stage6",
+        "top": []
+      }
+    ],
+    "reference-v20.js": [
+      {
+        "unit": "reference-v20.js",
+        "group": "stage6",
+        "top": []
+      }
+    ],
+    "v20.js": [
+      {
+        "unit": "v20.js",
+        "group": "stage6",
+        "top": [
+          {
+            "name": "V20UI",
+            "kind": "const"
+          },
+          {
+            "name": "Offline20",
+            "kind": "const"
+          },
+          {
+            "name": "offlineCard20",
+            "kind": "var"
+          },
+          {
+            "name": "toggleOffline20",
+            "kind": "var"
+          },
+          {
+            "name": "playOffline20",
+            "kind": "var"
+          },
+          {
+            "name": "cleanupOffline20",
+            "kind": "var"
+          },
+          {
+            "name": "bindGuide20",
+            "kind": "var"
+          },
+          {
+            "name": "progressPanel20",
+            "kind": "var"
+          },
+          {
+            "name": "openReference20",
+            "kind": "var"
+          },
+          {
+            "name": "openDiagnostics20",
+            "kind": "var"
+          },
+          {
+            "name": "themeNative20",
+            "kind": "var"
+          },
+          {
+            "name": "normalizeButtons20",
+            "kind": "var"
+          },
+          {
+            "name": "reveal20",
+            "kind": "var"
+          }
+        ]
+      }
+    ],
+    "v22.js": [
+      {
+        "unit": "v22.js",
+        "group": "stage6",
+        "top": [
+          {
+            "name": "V22UI",
+            "kind": "const"
+          },
+          {
+            "name": "expandBefore22",
+            "kind": "const"
+          },
+          {
+            "name": "anchorStep22",
+            "kind": "var"
+          },
+          {
+            "name": "migrateGuide22",
+            "kind": "var"
+          },
+          {
+            "name": "blockMarked22",
+            "kind": "var"
+          },
+          {
+            "name": "paintBlocks22",
+            "kind": "var"
+          },
+          {
+            "name": "setGuideMode22",
+            "kind": "var"
+          }
+        ]
+      }
+    ],
+    "v23.js": [
+      {
+        "unit": "v23.js",
+        "group": "stage6",
+        "top": [
+          {
+            "name": "V23UI",
+            "kind": "const"
+          },
+          {
+            "name": "gymBrowse23",
+            "kind": "let"
+          },
+          {
+            "name": "gymLevel23",
+            "kind": "let"
+          },
+          {
+            "name": "gymFamily23",
+            "kind": "let"
+          },
+          {
+            "name": "gymFields23",
+            "kind": "var"
+          },
+          {
+            "name": "openGym23",
+            "kind": "var"
+          },
+          {
+            "name": "gymView23",
+            "kind": "var"
+          },
+          {
+            "name": "listBefore23",
+            "kind": "const"
+          },
+          {
+            "name": "equipmentLabel23",
+            "kind": "var"
+          }
+        ]
+      }
+    ],
+    "v24.js": [
+      {
+        "unit": "v24.js",
+        "group": "stage7",
+        "top": [
+          {
+            "name": "V24UI",
+            "kind": "const"
+          },
+          {
+            "name": "Nav24",
+            "kind": "const"
+          },
+          {
+            "name": "snapshotModal24",
+            "kind": "var"
+          },
+          {
+            "name": "modalButtons24",
+            "kind": "var"
+          },
+          {
+            "name": "decorateBefore24",
+            "kind": "const"
+          },
+          {
+            "name": "backModal24",
+            "kind": "var"
+          },
+          {
+            "name": "goalSelection14",
+            "kind": "var"
+          },
+          {
+            "name": "Warm24",
+            "kind": "const"
+          },
+          {
+            "name": "expandBlocks24",
+            "kind": "const"
+          },
+          {
+            "name": "migrateBefore24",
+            "kind": "const"
+          },
+          {
+            "name": "expandSequence24",
+            "kind": "const"
+          },
+          {
+            "name": "toggleDemo24",
+            "kind": "const"
+          },
+          {
+            "name": "adjustRoutine24",
+            "kind": "const"
+          }
+        ]
+      }
+    ],
+    "v25.js": [
+      {
+        "unit": "v25.js",
+        "group": "stage7",
+        "top": [
+          {
+            "name": "V25UI",
+            "kind": "const"
+          },
+          {
+            "name": "warmSelectBefore25",
+            "kind": "const"
+          },
+          {
+            "name": "Warm25",
+            "kind": "const"
+          },
+          {
+            "name": "Back25",
+            "kind": "const"
+          }
+        ]
+      }
+    ],
+    "v26.js": [
+      {
+        "unit": "v26.js",
+        "group": "stage7",
+        "top": [
+          {
+            "name": "V26UI",
+            "kind": "const"
+          },
+          {
+            "name": "UI26",
+            "kind": "const"
+          },
+          {
+            "name": "revealBefore26",
+            "kind": "const"
+          }
+        ]
+      }
+    ],
+    "v27.js": [
+      {
+        "unit": "v27.js",
+        "group": "stage7",
+        "top": [
+          {
+            "name": "V27UI",
+            "kind": "const"
+          },
+          {
+            "name": "Scenes27",
+            "kind": "const"
+          },
+          {
+            "name": "TimerAlarm27",
+            "kind": "const"
+          }
+        ]
+      }
+    ],
+    "v28.js": [
+      {
+        "unit": "v28.js",
+        "group": "stage7",
+        "top": [
+          {
+            "name": "V28UI",
+            "kind": "const"
+          },
+          {
+            "name": "Evolution28",
+            "kind": "const"
+          },
+          {
+            "name": "Particles28",
+            "kind": "const"
+          },
+          {
+            "name": "closeBefore28",
+            "kind": "const"
+          }
+        ]
+      }
+    ],
+    "v29.js": [
+      {
+        "unit": "v29.js",
+        "group": "stage7",
+        "top": [
+          {
+            "name": "V29UI",
+            "kind": "const"
+          },
+          {
+            "name": "layoutBefore29",
+            "kind": "const"
+          },
+          {
+            "name": "Stars29",
+            "kind": "const"
+          },
+          {
+            "name": "Ambient29",
+            "kind": "const"
+          },
+          {
+            "name": "closeBefore29",
+            "kind": "const"
+          },
+          {
+            "name": "entryDone29",
+            "kind": "let"
+          },
+          {
+            "name": "readiness29",
+            "kind": "var"
+          },
+          {
+            "name": "readinessObserver29",
+            "kind": "const"
+          },
+          {
+            "name": "scrollPositions3817",
+            "kind": "const"
+          },
+          {
+            "name": "pendingScroll3817",
+            "kind": "let"
+          },
+          {
+            "name": "scrollFrame3817",
+            "kind": "let"
+          },
+          {
+            "name": "viewportFrame3817",
+            "kind": "let"
+          },
+          {
+            "name": "finiteScroll3817",
+            "kind": "const"
+          },
+          {
+            "name": "cancelMotionFrames3817",
+            "kind": "var"
+          },
+          {
+            "name": "ambientScroll3817",
+            "kind": "var"
+          },
+          {
+            "name": "ambientViewport3817",
+            "kind": "var"
+          }
+        ]
+      }
+    ],
+    "hunter-bundle3874-07.js": [
+      {
+        "unit": "motion-v30.js",
+        "group": "stage7",
+        "top": []
+      },
+      {
+        "unit": "motion-v31.js",
+        "group": "stage8",
+        "top": []
+      },
+      {
+        "unit": "motion-v36.js",
+        "group": "stage8",
+        "top": []
+      },
+      {
+        "unit": "motion-v37.js",
+        "group": "stage8",
+        "top": []
+      },
+      {
+        "unit": "motion-v373.js",
+        "group": "stage8",
+        "top": []
+      },
+      {
+        "unit": "training-v30.js",
+        "group": "stage8",
+        "top": []
+      }
+    ],
+    "v30.js": [
+      {
+        "unit": "v30.js",
+        "group": "stage8",
+        "top": [
+          {
+            "name": "V30UI",
+            "kind": "const"
+          },
+          {
+            "name": "positionCompanion30",
+            "kind": "var"
+          },
+          {
+            "name": "panelBefore30",
+            "kind": "const"
+          },
+          {
+            "name": "paintBefore30",
+            "kind": "const"
+          },
+          {
+            "name": "migrateBefore30",
+            "kind": "const"
+          }
+        ]
+      }
+    ],
+    "v31.js": [
+      {
+        "unit": "v31.js",
+        "group": "stage8",
+        "top": [
+          {
+            "name": "V31UI",
+            "kind": "const"
+          },
+          {
+            "name": "SessionLayout31",
+            "kind": "const"
+          },
+          {
+            "name": "compactGuide31",
+            "kind": "var"
+          },
+          {
+            "name": "shadowAura31",
+            "kind": "var"
+          },
+          {
+            "name": "resizeCompanion31",
+            "kind": "const"
+          }
+        ]
+      }
+    ],
+    "v32.js": [
+      {
+        "unit": "v32.js",
+        "group": "stage8",
+        "top": [
+          {
+            "name": "V32UI",
+            "kind": "const"
+          },
+          {
+            "name": "Transition32",
+            "kind": "const"
+          }
+        ]
+      }
+    ],
+    "visuals-v33.js": [
+      {
+        "unit": "visuals-v33.js",
+        "group": "stage8",
+        "top": [
+          {
+            "name": "Visual33",
+            "kind": "const"
+          }
+        ]
+      }
+    ],
+    "v33.js": [
+      {
+        "unit": "v33.js",
+        "group": "stage8",
+        "top": [
+          {
+            "name": "V33UI",
+            "kind": "const"
+          },
+          {
+            "name": "layout33",
+            "kind": "const"
+          },
+          {
+            "name": "selectTheme33",
+            "kind": "var"
+          },
+          {
+            "name": "ShadowActor33",
+            "kind": "let"
+          },
+          {
+            "name": "phraseTimer33",
+            "kind": "let"
+          },
+          {
+            "name": "phrases33",
+            "kind": "const"
+          },
+          {
+            "name": "updatePhrase33",
+            "kind": "var"
+          },
+          {
+            "name": "schedulePhrase33",
+            "kind": "var"
+          },
+          {
+            "name": "decorate33",
+            "kind": "var"
+          },
+          {
+            "name": "decorateBefore33",
+            "kind": "const"
+          },
+          {
+            "name": "evolutionPreview33",
+            "kind": "let"
+          },
+          {
+            "name": "openEvolution33",
+            "kind": "var"
+          },
+          {
+            "name": "previewEvolution33",
+            "kind": "var"
+          },
+          {
+            "name": "paintEvolution33",
+            "kind": "var"
+          }
+        ]
+      }
+    ],
+    "v34.js": [
+      {
+        "unit": "v34.js",
+        "group": "stage8",
+        "top": [
+          {
+            "name": "V34UI",
+            "kind": "const"
+          },
+          {
+            "name": "FramePacer34",
+            "kind": "const"
+          },
+          {
+            "name": "Performance34",
+            "kind": "const"
+          },
+          {
+            "name": "hdPaths34",
+            "kind": "const"
+          },
+          {
+            "name": "visualSelectionBefore34",
+            "kind": "const"
+          },
+          {
+            "name": "Hero34",
+            "kind": "const"
+          },
+          {
+            "name": "Stars34",
+            "kind": "const"
+          },
+          {
+            "name": "burstBefore34",
+            "kind": "const"
+          },
+          {
+            "name": "shortPhrases34",
+            "kind": "const"
+          },
+          {
+            "name": "dailyPhrase34",
+            "kind": "var"
+          },
+          {
+            "name": "thoughtMarkup34",
+            "kind": "var"
+          },
+          {
+            "name": "mountPanelBefore34",
+            "kind": "const"
+          },
+          {
+            "name": "completeBefore34",
+            "kind": "const"
+          }
+        ]
+      }
+    ],
+    "v35.js": [
+      {
+        "unit": "v35.js",
+        "group": "stage8",
+        "top": [
+          {
+            "name": "V35UI",
+            "kind": "const"
+          },
+          {
+            "name": "SessionLandscape35",
+            "kind": "const"
+          }
+        ]
+      }
+    ],
+    "v36.js": [
+      {
+        "unit": "v36.js",
+        "group": "stage8",
+        "top": [
+          {
+            "name": "V36UI",
+            "kind": "const"
+          },
+          {
+            "name": "Thought36",
+            "kind": "const"
+          }
+        ]
+      }
+    ],
+    "v37.js": [
+      {
+        "unit": "v37.js",
+        "group": "stage9",
+        "top": [
+          {
+            "name": "ExerciseLookup372",
+            "kind": "const"
+          },
+          {
+            "name": "Startup37",
+            "kind": "const"
+          }
+        ]
+      }
+    ],
+    "svg-renderer-v373.js": [
+      {
+        "unit": "svg-renderer-v373.js",
+        "group": "stage9",
+        "top": []
+      }
+    ],
+    "runtime-v373.js": [
+      {
+        "unit": "runtime-v373.js",
+        "group": "stage9",
+        "top": [
+          {
+            "name": "Runtime373",
+            "kind": "const"
+          },
+          {
+            "name": "DemoLoop373",
+            "kind": "const"
+          },
+          {
+            "name": "runtimeUI373",
+            "kind": "const"
+          }
+        ]
+      }
+    ],
+    "hunter-v374.js": [
+      {
+        "unit": "hunter-v374.js",
+        "group": "stage9",
+        "top": [
+          {
+            "name": "HunterImprove374",
+            "kind": "const"
+          },
+          {
+            "name": "interpretBefore374",
+            "kind": "const"
+          },
+          {
+            "name": "profileBefore374",
+            "kind": "const"
+          },
+          {
+            "name": "goalSelectionBefore374",
+            "kind": "const"
+          },
+          {
+            "name": "previewGoal374",
+            "kind": "var"
+          },
+          {
+            "name": "applyGoal374",
+            "kind": "var"
+          },
+          {
+            "name": "submitBefore374",
+            "kind": "const"
+          },
+          {
+            "name": "getSafeText374",
+            "kind": "var"
+          },
+          {
+            "name": "answerBefore374",
+            "kind": "const"
+          },
+          {
+            "name": "namesSafe374",
+            "kind": "var"
+          },
+          {
+            "name": "diagnosticsBefore374",
+            "kind": "const"
+          }
+        ]
+      }
+    ],
+    "hunter-bundle3874-08.js": [
+      {
+        "unit": "hunter-motion375.js",
+        "group": "stage9",
+        "top": []
+      },
+      {
+        "unit": "hunter-v376.js",
+        "group": "stage9",
+        "top": []
+      },
+      {
+        "unit": "hunter-v377.js",
+        "group": "stage9",
+        "top": []
+      },
+      {
+        "unit": "hunter-v378.js",
+        "group": "stage9",
+        "top": []
+      },
+      {
+        "unit": "hunter-v379.js",
+        "group": "stage9",
+        "top": []
+      },
+      {
+        "unit": "hunter-performance380.js",
+        "group": "stage9",
+        "top": []
+      },
+      {
+        "unit": "hunter-training387.js",
+        "group": "stage9",
+        "top": []
+      }
+    ],
+    "hunter-bundle3874-09.js": [
+      {
+        "unit": "hunter-materials3814.js",
+        "group": "stage9",
+        "top": []
+      },
+      {
+        "unit": "hunter-progression3815.js",
+        "group": "stage10",
+        "top": []
+      },
+      {
+        "compiled": "hunter-catalog3846.js"
+      }
+    ],
+    "hunter-bundle3874-10.js": [
+      {
+        "unit": "hunter-groups3849.js",
+        "group": "stage10",
+        "top": []
+      },
+      {
+        "unit": "hunter-quality3850.js",
+        "group": "stage10",
+        "top": []
+      },
+      {
+        "unit": "hunter-categoryprogress3851.js",
+        "group": "stage10",
+        "top": []
+      },
+      {
+        "unit": "hunter-level3851.js",
+        "group": "stage10",
+        "top": []
+      },
+      {
+        "unit": "hunter-dynamic381.js",
+        "group": "stage10",
+        "top": []
+      },
+      {
+        "unit": "hunter-monarch3852.js",
+        "group": "stage10",
+        "top": []
+      },
+      {
+        "unit": "hunter-clean382.js",
+        "group": "stage10",
+        "top": []
+      }
+    ],
+    "hunter-safe383.js": [
+      {
+        "unit": "hunter-safe383.js",
+        "group": "stage10",
+        "top": []
+      }
+    ],
+    "hunter-resource384.js": [
+      {
+        "unit": "hunter-resource384.js",
+        "group": "stage10",
+        "top": []
+      }
+    ],
+    "hunter-insights385.js": [
+      {
+        "unit": "hunter-insights385.js",
+        "group": "stage10",
+        "top": []
+      }
+    ],
+    "hunter-evolution385.js": [
+      {
+        "unit": "hunter-evolution385.js",
+        "group": "stage10",
+        "top": []
+      }
+    ],
+    "hunter-evolution386.js": [
+      {
+        "unit": "hunter-evolution386.js",
+        "group": "stage11",
+        "top": []
+      }
+    ],
+    "hunter-particles388.js": [
+      {
+        "unit": "hunter-particles388.js",
+        "group": "stage11",
+        "top": []
+      }
+    ],
+    "hunter-rig389.js": [
+      {
+        "unit": "hunter-rig389.js",
+        "group": "stage11",
+        "top": []
+      }
+    ],
+    "hunter-demo-load3816.js": [
+      {
+        "unit": "hunter-demo-load3816.js",
+        "group": "stage11",
+        "top": []
+      }
+    ],
+    "hunter-list3819.js": [
+      {
+        "unit": "hunter-list3819.js",
+        "group": "stage11",
+        "top": []
+      }
+    ],
+    "hunter-adaptive3823.js": [
+      {
+        "unit": "hunter-adaptive3823.js",
+        "group": "stage11",
+        "top": []
+      }
+    ],
+    "hunter-navigation3825.js": [
+      {
+        "unit": "hunter-navigation3825.js",
+        "group": "stage11",
+        "top": []
+      }
+    ],
+    "hunter-bundle3874-11.js": [
+      {
+        "unit": "hunter-closure3826.js",
+        "group": "stage11",
+        "top": []
+      },
+      {
+        "unit": "hunter-unified3827.js",
+        "group": "stage11",
+        "top": []
+      },
+      {
+        "unit": "hunter-stable3828.js",
+        "group": "stage11",
+        "top": []
+      },
+      {
+        "unit": "hunter-profile3829.js",
+        "group": "stage11",
+        "top": []
+      }
+    ],
+    "hunter-companion3833.js": [
+      {
+        "unit": "hunter-companion3833.js",
+        "group": "stage11",
+        "top": []
+      }
+    ],
+    "hunter-coach3834.js": [
+      {
+        "unit": "hunter-coach3834.js",
+        "group": "stage11",
+        "top": []
+      }
+    ],
+    "hunter-profile3835.js": [
+      {
+        "unit": "hunter-profile3835.js",
+        "group": "stage11",
+        "top": []
+      }
+    ],
+    "hunter-bundle3874-12.js": [
+      {
+        "unit": "hunter-week3836.js",
+        "group": "stage11",
+        "top": []
+      },
+      {
+        "unit": "hunter-week3837.js",
+        "group": "stage11",
+        "top": []
+      },
+      {
+        "unit": "hunter-strict3838.js",
+        "group": "stage11",
+        "top": []
+      },
+      {
+        "unit": "hunter-nozoom3844.js",
+        "group": "stage11",
+        "top": []
+      }
+    ],
+    "hunter-library3845.js": [
+      {
+        "unit": "hunter-library3845.js",
+        "group": "stage11",
+        "top": []
+      }
+    ],
+    "hunter-bundle3874-13.js": [
+      {
+        "unit": "hunter-ui3846.js",
+        "group": "stage11",
+        "top": []
+      },
+      {
+        "unit": "hunter-week3847.js",
+        "group": "stage11",
+        "top": []
+      },
+      {
+        "unit": "hunter-monarch-ui3853.js",
+        "group": "stage12",
+        "top": []
+      },
+      {
+        "unit": "hunter-route3855.js",
+        "group": "stage12",
+        "top": []
+      },
+      {
+        "unit": "hunter-panels3857.js",
+        "group": "stage12",
+        "top": []
+      },
+      {
+        "unit": "hunter-bundle3874-13-5.js",
+        "group": "stage12",
+        "top": []
+      }
+    ],
+    "hunter-demo-coverage3862.js": [
+      {
+        "unit": "hunter-demo-coverage3862.js",
+        "group": "stage12",
+        "top": []
+      }
+    ],
+    "hunter-bundle3874-14.js": [
+      {
+        "unit": "hunter-anatomy3863.js",
+        "group": "stage12",
+        "top": []
+      },
+      {
+        "unit": "hunter-quality3864.js",
+        "group": "stage12",
+        "top": []
+      },
+      {
+        "unit": "hunter-motion3865.js",
+        "group": "stage12",
+        "top": []
+      },
+      {
+        "unit": "hunter-motion3866.js",
+        "group": "stage12",
+        "top": []
+      }
+    ],
+    "hunter-final3867.js": [
+      {
+        "unit": "hunter-final3867.js",
+        "group": "stage12",
+        "top": []
+      }
+    ],
+    "hunter-bundle3874-15.js": [
+      {
+        "unit": "hunter-portable3868.js",
+        "group": "stage12",
+        "top": []
+      },
+      {
+        "unit": "hunter-integration3869.js",
+        "group": "stage12",
+        "top": []
+      },
+      {
+        "unit": "hunter-dailyprogress3870.js",
+        "group": "stage12",
+        "top": []
+      },
+      {
+        "unit": "asterion-rules3872.js",
+        "group": "stage13",
+        "top": []
+      },
+      {
+        "unit": "asterion-bridge3872.js",
+        "group": "stage13",
+        "top": []
+      },
+      {
+        "unit": "asterion-unified3873.js",
+        "group": "stage13",
+        "top": []
+      }
+    ],
+    "hunter-equipment3880.js": [
+      {
+        "group": "stage13",
+        "unit": "hunter-equipment3880.js",
+        "top": []
+      }
+    ]
+  }
+}

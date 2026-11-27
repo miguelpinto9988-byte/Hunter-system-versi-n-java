@@ -1,0 +1,72 @@
+// Equivalencias de atributos de eventos para comparar el HTML de ambas versiones.
+const handlers = new Map([
+    ["setAsterionActive", ["this", "AsterionBridge3872.change('active',this.checked?'true':'false')"]],
+    ["removeBuilderItem", ["@value", "builderItems.splice(@value,1);builderRows()"]],
+    ["setBuilderSets", ["this,@value", "builderItems[@value].sets=+this.value"]],
+    ["setBuilderTarget", ["this,@value", "builderItems[@value].target=+this.value"]],
+    ["filterCreators", ["this", "creatorFilter=this.value;document.querySelector('#creatorVideos').innerHTML=creatorVideoCards()"]],
+    ["closeDetailedMode", ["", "detailedMode=false;render()"]],
+    ["searchBody", ["this", "document.querySelector('#bodyResults').innerHTML=bodyResults(this.value)"]],
+    ["openProfile", ["", "document.querySelector('#modal').close();go('profile')"]],
+    ["openWorkout", ["", "document.querySelector('#modal').close();go('workout')"]],
+    ["showAlternative", ["'@value'", "document.querySelector('#modal').close();technique('@value')"]],
+    ["showTechnique", ["'@value'", "document.querySelector('#modal').close();technique('@value')"]],
+    ["updateTrainingGoal", ["this", "document.querySelector('#trainingGoal').value=this.value"]],
+    ["submitCoach", ["this,event", "event.preventDefault();askCoach(this.question.value)"]],
+    ["submitCheckin", ["this,event", "event.preventDefault();saveCheckin(this)"]],
+    ["filterCategory", ["'@value'", "exerciseCategory='@value';render()"]],
+    ["filterEquipment", ["this", "exerciseEquip=this.value;refreshExercises()"]],
+    ["filterLevel", ["this", "exerciseLevel=this.value;refreshExercises()"]],
+    ["filterMuscle", ["this", "exerciseMuscle=this.value;refreshExercises()"]],
+    ["reportProgress", ["", "feedback();toast('Avance parcial guardado. Puedes continuar hoy.')"]],
+    ["setFilter", ["'@value'", "filter='@value';render()"]],
+    ["exitGym", ["", "gymBrowse23=false;go('profile')"]],
+    ["exitGymBrowser", ["", "gymBrowse23=false;render()"]],
+    ["setGymFamily", ["this", "gymFamily23=this.value;render()"]],
+    ["setGymLevel", ["@value", "gymLevel23=@value;render()"]],
+    ["toggleCompanion", ["this,'@value'", "if(this.open)sampleCompanion13('@value','enter');else galleryActors13.get('@value')?.pause()"]],
+    ["togglePreview", ["this", "if(this.open){this.querySelector('img').src=this.querySelector('img').dataset.src}else{this.querySelector('img').removeAttribute('src')}"]],
+    ["removeInjury", ["@value", "injuryDraft.splice(@value,1);drawInjuries()"]],
+    ["setInjuryStage", ["this,@value", "injuryDraft[@value].stage=this.value"]],
+    ["setInjuryType", ["this,@value", "injuryDraft[@value].type=this.value"]],
+    ["setInjuryZone", ["this,@value", "injuryDraft[@value].zone=this.value"]],
+    ["openRoutineLibrary", ["", "openCompleteRoutines();document.querySelector('#modal').close()"]],
+    ["setLibraryEquipment", ["this", "ownEquipment14=this.value;render()"]],
+    ["setLibraryFamily", ["this", "ownFamily14=this.value;render()"]],
+    ["setLibraryLength", ["this", "ownLength14=this.value;render()"]],
+    ["setLibraryLevel", ["@value", "ownLevel14=@value;render()"]],
+    ["closeLibrary", ["", "ownLibrary11=false;render()"]],
+    ["openLibrary", ["", "ownLibrary11=true;trainerPage11=null;render()"]],
+    ["filterExercisesByProfile", ["this", "profileFilter=this.checked;refreshExercises()"]],
+    ["filterAvailableRoutines", ["this", "routineAvailable=this.checked;refreshRoutines()"]],
+    ["setRoutineCategory", ["'@value'", "routineCategory='@value';render()"]],
+    ["showChallenges", ["", "routineMode='challenges';render()"]],
+    ["showCompleteRoutines", ["", "routineMode='complete';render()"]],
+    ["filterRoutinesByProfile", ["this", "routineProfileFilter=this.checked;refreshRoutines()"]],
+    ["setRoutineProfileFilter", ["this", "routineProfileFilter=this.checked;render()"]],
+    ["searchRoutines", ["this", "routineQuery=this.value;refreshRoutines()"]],
+    ["setVariants", ["this", "showVariants=this.checked;refreshExercises()"]],
+    ["deleteRoutine", ["'@value'", "state.customRoutines=state.customRoutines.filter(r=>r.id!=='@value');save();document.querySelector('#modal').close();go('routines')"]],
+    ["openOrScrollProfile", ["", "tab==='profile'?window.scrollTo({top:0,behavior:'instant'}):go('profile')"]],
+    ["setPlaybackRate", ["this", "this.closest('.offline-demo20').querySelector('video').playbackRate=Number(this.value)"]],
+    ["showScaledPercent", ["this", "this.parentElement.querySelector('output').textContent=Math.round(this.value*100)+'%'"]],
+    ["showPercent", ["this", "this.parentElement.querySelector('output').textContent=this.value+'%'"]],
+    ["clearTimer", ["", "timerEnd=0;updateClock()"]],
+    ["clearSourceTimer", ["", "timerEnd=0;updateSourceClock()"]],
+    ["clearTrainer", ["", "trainerPage11=null;render()"]],
+    ["mirrorVector", ["", "vectorSession.mirror=!vectorSession.mirror;vectorPaint()"]],
+    ["closeWorkTimer", ["", "workEnd=0;document.querySelector('#modal').close()"]],
+    ["confirmMission", ["'@value'", "recomputeMission(dayByDate('@value'));refreshMission()"]],
+    ["openDetailedWorkout", ["", "document.querySelector('#modal').close();detailedMode=true;go('workout')"]],
+    ["selectRoute", ["'@value'", "detailedMode=false;if(tab==='@value')window.scrollTo({top:0,behavior:'instant'});else go('@value')"]],
+]);
+function originalActions(text) {
+    return text.replace(/HunterActions\.(\w+)\(([^)]*)\)/g, (call, name, args) => {
+        const row = handlers.get(name);
+        if (!row) return call;
+        const [parameters, source] = row;
+        const value = parameters.includes('@value') ? args.slice(args.lastIndexOf(',') + 1).replace(/^'|'$/g, '') : '';
+        return source.replaceAll('@value', value);
+    });
+}
+module.exports = { handlers, originalActions };
