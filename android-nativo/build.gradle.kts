@@ -14,12 +14,17 @@ android {
         applicationId = "com.huntersystem.nativo"
         minSdk = 26
         targetSdk = 34
-        versionCode = 1
-        versionName = "38.80-native-preview"
+        versionCode = 2
+        versionName = "38.80-native-preview.2"
     }
+    testOptions.unitTests.isIncludeAndroidResources = true
     buildFeatures { compose = true }
 }
 dependencies {
+    testImplementation("org.robolectric:robolectric:4.14.1")
+    testImplementation("junit:junit:4.13.2")
+    testImplementation(platform("androidx.compose:compose-bom:2024.12.01"))
+    testImplementation("androidx.compose.ui:ui-test-junit4")
     implementation("androidx.activity:activity-compose:1.9.3")
     implementation(platform("androidx.compose:compose-bom:2024.12.01"))
     implementation("androidx.compose.material3:material3")

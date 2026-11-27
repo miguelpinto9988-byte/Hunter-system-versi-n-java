@@ -30,9 +30,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONArray
 
-private val displayFont = FontFamily(Font(R.font.hunter_display))
-private val bodyFont = FontFamily(Font(R.font.hunter_text))
-private val silver = Color(0xffb9d4de)
+internal val displayFont = FontFamily(Font(R.font.hunter_display))
+internal val bodyFont = FontFamily(Font(R.font.hunter_text))
+internal val silver = Color(0xffb9d4de)
 private val background = Color(0xff10151c)
 private data class Exercise(val id: String, val name: String, val category: String, val group: String, val steps: String, val cue: String)
 
@@ -40,23 +40,55 @@ class HunterActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val catalog by produceState<List<Exercise>?>(null) {
-                value = withContext(Dispatchers.IO) {
-                    val rows = assets.open("ejercicios.json").bufferedReader().use { JSONArray(it.readText()) }
-                    List(rows.length()) { index ->
-                        val row = rows.getJSONObject(index)
-                        Exercise(row.getString("id"), row.getString("name"), row.optString("category"), row.optString("group"), row.optString("steps"), row.optString("cue"))
-                    }
-                }
-            }
+            val prefs = remember { getSharedPreferences("hunter-profile", MODE_PRIVATE) }
+            var saved by remember { mutableStateOf(prefs.getString("profile", null)) }
+            var editing by rememberSaveable { mutableStateOf(false) }
             MaterialTheme(colorScheme = darkColorScheme(background = background, primary = silver)) {
                 Surface(Modifier.fillMaxSize(), color = background) {
-                    val loaded = catalog
-                    if (loaded == null) Awakening() else ExerciseArchive(loaded)
+                    if (saved == null || editing) {
+                        BackHandler(enabled = editing) { editing = false }
+                        Profile(saved) { data ->
+                            prefs.edit().putString("profile", data).commit().also { success ->
+                                if (success) { saved = data; editing = false }
+                            }
+                        }
+                    } else ArchiveRoute { editing = true }
                 }
             }
         }
     }
+    @Composable
+    private fun ArchiveRoute(editProfile: () -> Unit) {
+        var attempt by remember { mutableIntStateOf(0) }
+        val catalog by produceState<Result<List<Exercise>>?>(null, attempt) {
+            value = null
+            value = withContext(Dispatchers.IO) {
+                try {
+                    val rows = assets.open("ejercicios.json").bufferedReader().use { JSONArray(it.readText()) }
+                    Result.success(List(rows.length()) { index ->
+                        val row = rows.getJSONObject(index)
+                        Exercise(row.getString("id"), row.getString("name"), row.optString("category"),
+                            row.optString("group"), row.optString("steps"), row.optString("cue"))
+                    })
+                } catch (error: java.io.IOException) {
+                    Result.failure(error)
+                } catch (error: org.json.JSONException) {
+                    Result.failure(error)
+                }
+            }
+        }
+        val state = catalog
+        when {
+            state == null -> Awakening()
+            state.isSuccess -> ExerciseArchive(state.getOrThrow(), editProfile)
+            else -> Column(Modifier.padding(20.dp)) {
+                Text("No se pudo abrir el catálogo.")
+                Button(onClick = { attempt++ }) { Text("Reintentar") }
+                TextButton(onClick = editProfile) { Text("Editar perfil") }
+            }
+        }
+    }
+
 }
 
 @Composable
@@ -85,7 +117,7 @@ private fun Awakening() {
 }
 
 @Composable
-private fun ExerciseArchive(catalog: List<Exercise>) {
+private fun ExerciseArchive(catalog: List<Exercise>, editProfile: () -> Unit) {
     var query by rememberSaveable { mutableStateOf("") }
     var category by rememberSaveable { mutableStateOf("Todas") }
     var selection by rememberSaveable { mutableStateOf<String?>(null) }
@@ -97,6 +129,7 @@ private fun ExerciseArchive(catalog: List<Exercise>) {
     Column(Modifier.fillMaxSize().padding(horizontal = 16.dp)) {
         Text("HUNTER SYSTEM", Modifier.padding(top = 16.dp), fontSize = 24.sp, fontFamily = displayFont, color = silver)
         Text("SISTEMA DE SOMBRAS", fontSize = 11.sp, letterSpacing = 2.sp, fontFamily = bodyFont)
+        TextButton(onClick = editProfile) { Text("Editar perfil") }
         HorizontalDivider(Modifier.padding(vertical = 12.dp))
         if (exercise != null) {
             Column(Modifier.verticalScroll(rememberScrollState())) {
