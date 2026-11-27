@@ -49,3 +49,42 @@ git push origin main
 ```
 
 No almacenar claves privadas, contraseñas ni certificados de firma en un repositorio público.
+
+## Aplicación web Kotlin/JS
+
+La aplicación web se desarrolla en `kotlin-web/`. Incluye las pantallas, el
+motor de entrenamiento, el registro de sesiones, la selección combinada de
+equipamiento de la versión 38.80 y las animaciones. Los grupos de
+`kotlin-web/app/` se inicializan en el orden de `modules.json` para conservar
+la compatibilidad con perfiles guardados y con el puente Android.
+
+Desde la raíz del repositorio, con Java, Bash, curl y Python 3 instalados:
+
+```sh
+tools/compilar_web_kotlin.sh
+python3 -m http.server 8000 --directory build/hunter-web
+```
+
+Abre `http://localhost:8000`. La primera compilación descarga el compilador
+Kotlin 2.1.21 y las fuentes tipográficas. El paquete web contiene los estilos,
+imágenes, vídeos y audio del proyecto. El navegador ejecuta la salida de
+Kotlin/JS junto con los enlaces de carga y eventos de la interfaz HTML.
+
+### Pruebas de la migración
+
+```sh
+for prueba in tools/verificar_*_kotlin.cjs; do node "$prueba" || exit 1; done
+```
+
+Las comparaciones en Chromium requieren Playwright y un servidor de la raíz
+del repositorio para abrir la aplicación original y la compilada en paralelo.
+Ejecuta `python3 -m http.server 8575` y, en otra terminal:
+
+```sh
+node tools/verificar_rutas_chromium.cjs
+node tools/verificar_ventanas_chromium.cjs
+node tools/verificar_animaciones_chromium.cjs
+node tools/verificar_guia_chromium.cjs
+```
+
+`CHROMIUM_PATH` permite seleccionar un ejecutable local de Chromium.
