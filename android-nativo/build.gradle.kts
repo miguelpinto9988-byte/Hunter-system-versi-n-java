@@ -6,6 +6,10 @@ plugins {
 android {
     namespace = "com.huntersystem.nativo"
     compileSdk = 35
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
     defaultConfig {
         applicationId = "com.huntersystem.nativo"
         minSdk = 26
@@ -23,3 +27,4 @@ dependencies {
 
 // Las demostraciones son medios locales y se reproducen mediante Android MediaPlayer.
 android.sourceSets.getByName("main").assets.srcDir("../apk_contents/assets/offline2d")
+kotlin.compilerOptions.jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
