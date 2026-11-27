@@ -17,3 +17,7 @@ recursos locales. El módulo se instala con el identificador
 Las preferencias avanzadas del perfil, la planificación, las misiones, el calendario, el progreso, el
 asistente y los recordatorios de la aplicación anterior siguen pendientes en
 esta versión nativa.
+
+## Arranque preview.3
+
+La pantalla animada original se muestra antes de decidir entre ficha de perfil y catálogo, durante 1500 ms como mínimo. No contiene botón de reintento. Si el catálogo falla, se muestra un mensaje separado con acceso a editar el perfil y la indicación de cerrar y volver a abrir. Se mantienen los datos locales.

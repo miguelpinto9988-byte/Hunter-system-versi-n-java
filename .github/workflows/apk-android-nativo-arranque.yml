@@ -1,0 +1,56 @@
+name: APK Android nativa - arranque 38.80
+on:
+  push:
+    branches: [prueba-android-nativo-arranque]
+    paths:
+      - 'android-nativo/**'
+      - '.github/workflows/apk-android-nativo-arranque.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: 'platforms;android-35 build-tools;35.0.0'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+      - name: Ejecutar pruebas de arranque y perfil
+        working-directory: android-nativo
+        run: gradle --no-daemon testDebugUnitTest
+      - name: Compilar APK debug nativa
+        working-directory: android-nativo
+        run: gradle --no-daemon assembleDebug
+      - name: Verificar firma y versión
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          cp android-nativo/build/outputs/apk/debug/*.apk dist/HunterSystem_38.80_native_preview.3.apk
+          bt="$ANDROID_HOME/build-tools/35.0.0"
+          "$bt/apksigner" verify --verbose dist/*.apk
+          "$bt/aapt" dump badging dist/*.apk | tee dist/metadata.txt
+          grep -F "name='com.huntersystem.nativo' versionCode='3' versionName='38.80-native-preview.3'" dist/metadata.txt
+          git rev-parse HEAD > dist/source-commit.txt
+          (cd dist && sha256sum *.apk > SHA256SUMS.txt)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: HunterSystem_38.80_native_preview.3_APK
+          path: dist/
+          if-no-files-found: error
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Pruebas-arranque
+          path: android-nativo/build/reports/tests/
+          if-no-files-found: ignore

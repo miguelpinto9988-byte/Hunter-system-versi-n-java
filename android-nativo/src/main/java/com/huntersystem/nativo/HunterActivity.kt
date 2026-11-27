@@ -27,6 +27,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import org.json.JSONArray
 
@@ -43,9 +44,16 @@ class HunterActivity : ComponentActivity() {
             val prefs = remember { getSharedPreferences("hunter-profile", MODE_PRIVATE) }
             var saved by remember { mutableStateOf(prefs.getString("profile", null)) }
             var editing by rememberSaveable { mutableStateOf(false) }
+            var startupReady by remember { mutableStateOf(false) }
+            LaunchedEffect(Unit) {
+                delay(1500)
+                startupReady = true
+            }
             MaterialTheme(colorScheme = darkColorScheme(background = background, primary = silver)) {
                 Surface(Modifier.fillMaxSize(), color = background) {
-                    if (saved == null || editing) {
+                    if (!startupReady) {
+                        Awakening()
+                    } else if (saved == null || editing) {
                         BackHandler(enabled = editing) { editing = false }
                         Profile(saved) { data ->
                             prefs.edit().putString("profile", data).commit().also { success ->
@@ -59,8 +67,7 @@ class HunterActivity : ComponentActivity() {
     }
     @Composable
     private fun ArchiveRoute(editProfile: () -> Unit) {
-        var attempt by remember { mutableIntStateOf(0) }
-        val catalog by produceState<Result<List<Exercise>>?>(null, attempt) {
+        val catalog by produceState<Result<List<Exercise>>?>(null) {
             value = null
             value = withContext(Dispatchers.IO) {
                 try {
@@ -83,7 +90,7 @@ class HunterActivity : ComponentActivity() {
             state.isSuccess -> ExerciseArchive(state.getOrThrow(), editProfile)
             else -> Column(Modifier.padding(20.dp)) {
                 Text("No se pudo abrir el catálogo.")
-                Button(onClick = { attempt++ }) { Text("Reintentar") }
+                Text("Cierra y vuelve a abrir Hunter System. Tu perfil se conserva.")
                 TextButton(onClick = editProfile) { Text("Editar perfil") }
             }
         }

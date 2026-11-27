@@ -14,8 +14,8 @@ android {
         applicationId = "com.huntersystem.nativo"
         minSdk = 26
         targetSdk = 34
-        versionCode = 2
-        versionName = "38.80-native-preview.2"
+        versionCode = 3
+        versionName = "38.80-native-preview.3"
     }
     testOptions.unitTests.isIncludeAndroidResources = true
     buildFeatures { compose = true }

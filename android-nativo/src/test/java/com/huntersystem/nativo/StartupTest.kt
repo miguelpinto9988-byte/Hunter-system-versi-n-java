@@ -14,7 +14,15 @@ class StartupTest {
     @get:Rule val app = createAndroidComposeRule<HunterActivity>()
 
     @Test fun firstLaunchSaveAndReopen() {
-        app.onNodeWithText("Crea tu perfil").assertExists()
+        app.mainClock.autoAdvance = false
+        app.onNodeWithText("Preparando tu entrenamiento…").assertExists()
+        app.onNodeWithText("Reintentar").assertDoesNotExist()
+        app.onNodeWithText("Crea tu perfil").assertDoesNotExist()
+        app.mainClock.advanceTimeBy(1700)
+        app.mainClock.autoAdvance = true
+        app.waitUntil(10000) { app.onAllNodesWithText("Crea tu perfil").fetchSemanticsNodes().isNotEmpty() }
+        app.onNodeWithText("Preparando tu entrenamiento…").assertDoesNotExist()
+        app.onNodeWithText("Reintentar").assertDoesNotExist()
         val fields = app.onAllNodes(hasSetTextAction())
         listOf("Prueba", "20", "170", "65").forEachIndexed { index, value ->
             fields[index].performScrollTo().performTextInput(value)
@@ -23,6 +31,7 @@ class StartupTest {
         awaitArchive()
         app.activityRule.scenario.recreate()
         awaitArchive()
+        app.onNodeWithText("Reintentar").assertDoesNotExist()
         app.onNodeWithText("Editar perfil").performClick()
         app.onNodeWithText("Prueba").assertExists()
     }
