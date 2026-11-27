@@ -22,6 +22,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: 'build-tools;35.0.0'
       - name: Compilar Kotlin/JS
         run: bash tools/compilar_web_kotlin.sh
       - name: Verificar módulos Kotlin
@@ -34,7 +37,6 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          sdkmanager 'build-tools;35.0.0'
           bt="$ANDROID_HOME/build-tools/35.0.0"
           mkdir -p dist
           "$bt/zipalign" -f -p 4 build/HunterSystem_38.80_Kotlin-unsigned.apk build/HunterSystem_38.80_Kotlin-aligned.apk
@@ -46,6 +48,8 @@ jobs:
           grep -F "name='com.huntersystem.k80' versionCode='134' versionName='38.80'" dist/metadata.txt
           cd dist
           sha256sum HunterSystem_38.80_Kotlin.apk > SHA256SUMS.txt
+          git rev-parse HEAD > build-commit.txt
+          printf "%s\n" "4b918b2ea783789f3002190898d2e822fe3e0d99" > source-commit.txt
       - uses: actions/upload-artifact@v4
         with:
           name: HunterSystem_38.80_Kotlin_APK
