@@ -1,0 +1,54 @@
+name: APK de prueba Hunter 38.80 Kotlin
+on:
+  push:
+    branches: [prueba-apk-38.80-kotlin]
+    paths:
+      - '.github/workflows/apk-kotlin-prueba.yml'
+      - 'tools/empaquetar_apk_kotlin.py'
+      - 'kotlin-web/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Compilar Kotlin/JS
+        run: bash tools/compilar_web_kotlin.sh
+      - name: Verificar módulos Kotlin
+        run: |
+          set -euo pipefail
+          for prueba in tools/verificar_*_kotlin.cjs; do node "$prueba"; done
+      - name: Empaquetar contenedor Android
+        run: python3 tools/empaquetar_apk_kotlin.py
+      - name: Alinear y firmar con clave de prueba temporal
+        shell: bash
+        run: |
+          set -euo pipefail
+          sdkmanager 'build-tools;35.0.0'
+          bt="$ANDROID_HOME/build-tools/35.0.0"
+          mkdir -p dist
+          "$bt/zipalign" -f -p 4 build/HunterSystem_38.80_Kotlin-unsigned.apk build/HunterSystem_38.80_Kotlin-aligned.apk
+          keytool -genkeypair -keystore "$RUNNER_TEMP/hunter-test.p12" -storetype PKCS12 -storepass android -keypass android -alias hunter-test -keyalg RSA -keysize 2048 -validity 365 -dname 'CN=Hunter System Test'
+          "$bt/apksigner" sign --ks "$RUNNER_TEMP/hunter-test.p12" --ks-key-alias hunter-test --ks-pass pass:android --key-pass pass:android --out dist/HunterSystem_38.80_Kotlin.apk build/HunterSystem_38.80_Kotlin-aligned.apk
+          "$bt/apksigner" verify --verbose dist/HunterSystem_38.80_Kotlin.apk
+          "$bt/zipalign" -c -p 4 dist/HunterSystem_38.80_Kotlin.apk
+          "$bt/aapt" dump badging dist/HunterSystem_38.80_Kotlin.apk | tee dist/metadata.txt
+          grep -F "name='com.huntersystem.k80' versionCode='134' versionName='38.80'" dist/metadata.txt
+          cd dist
+          sha256sum HunterSystem_38.80_Kotlin.apk > SHA256SUMS.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: HunterSystem_38.80_Kotlin_APK
+          path: dist/
+          if-no-files-found: error
+          retention-days: 14
