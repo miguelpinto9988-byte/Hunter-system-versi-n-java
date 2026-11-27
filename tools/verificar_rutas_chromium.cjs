@@ -19,6 +19,7 @@ async function tour(browser, folder) {
         await page.goto(origin + '/' + folder + '/index.html', { waitUntil: 'domcontentloaded' });
         const form = page.locator('#profileForm');
         await form.waitFor({ state: 'attached' });
+        await page.waitForFunction(() => !Runtime20.initializing && !document.documentElement.classList.contains('booting20'));
         await page.evaluate(() => render());
         await form.evaluate(form => {
             for (const [key, value] of Object.entries({ name: 'Ana', age: 30, weight: 65, height: 165 })) form.elements[key].value = value;
@@ -46,6 +47,7 @@ async function tour(browser, folder) {
             return { profile, cycle, routes };
         });
         await page.reload({ waitUntil: 'domcontentloaded' });
+        await page.waitForFunction(() => !Runtime20.initializing && !document.documentElement.classList.contains('booting20'));
         const storedName = await page.evaluate(() => state.profile?.name);
         assert.equal(storedName, 'Ana', folder + ' debe recuperar el perfil');
         assert.deepEqual(errors, [], folder);

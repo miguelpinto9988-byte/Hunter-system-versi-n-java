@@ -376,7 +376,7 @@ internal fun installHunterLibrary3845() {
                 return (r.level === level)
             }))
             node.innerHTML = jsOr(list.map(tile).join("")) { "<div class=\"card empty\"><h3>No hay ejercicios compatibles con estos filtros</h3><p>Prueba otra categoría o duración, o revisa las restricciones y el equipo registrado en Perfil. No se sustituye una categoría por otra.</p></div>" }
-            val oldFilters: dynamic = box.querySelector((if (truth((mode === "gym"))) "select[onchange*=\"gymFamily23\"]" else ".routine-filters-14"))
+            val oldFilters: dynamic = box.querySelector((if (truth((mode === "gym"))) "select[onchange*=\"HunterActions.setGymFamily\"]" else ".routine-filters-14"))
             onPresent((if (truth((mode === "gym"))) onPresent(oldFilters) { value60 -> value60.closest("label") } else oldFilters)) { value61 -> value61.remove() }
             val subtitle: dynamic = box.querySelector(".page-heading p.muted")
             if (truth(subtitle)) {

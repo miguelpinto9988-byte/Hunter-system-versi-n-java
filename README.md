@@ -84,6 +84,7 @@ Ejecuta `python3 -m http.server 8575` y, en otra terminal:
 node tools/verificar_rutas_chromium.cjs
 node tools/verificar_ventanas_chromium.cjs
 node tools/verificar_animaciones_chromium.cjs
+node tools/verificar_guia_chromium.cjs
 ```
 
 `CHROMIUM_PATH` permite seleccionar un ejecutable local de Chromium.

@@ -256,7 +256,7 @@ internal fun installV23() {
     global_book = (fun(): dynamic {
         val box: dynamic = global_document.createElement("div")
         box.innerHTML = global_V23UI.book()
-        val select: dynamic = box.querySelector("select[onchange*=\"exerciseEquip\"]")
+        val select: dynamic = box.querySelector("select[onchange*=\"HunterActions.filterEquipment\"]")
         onPresent(select) { value61 -> value61.insertAdjacentHTML("beforeend", global_options(jsonValue("{\"gym\":\"Gimnasio · todo el equipo\",\"barbell\":\"Barras\",\"cable\":\"Poleas\",\"machine\":\"Máquinas\",\"smith\":\"Smith\",\"cardio\":\"Cinta o ergómetro\"}"), global_exerciseEquip)) }
         return box.innerHTML
     })
